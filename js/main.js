@@ -333,8 +333,6 @@ function testButton() {
   document.getElementById("Bottom_cut_table_id").innerHTML = BottomCut;
 }
 
-document.getElementById("TestingMesh").addEventListener("click", () => {});
-
 // Collar Change Function
 function CollarChange(CollarDesign) {
   if (CollarDesign == "null") {
@@ -496,3 +494,323 @@ function ChangeBottomCut(bottomcutDesign) {
     });
   }
 }
+
+document.getElementById("Black").addEventListener("click", () => {
+  // Add Texture
+  const textureLoader = new THREE.TextureLoader();
+  const texture = textureLoader.load("./components/Texture/black.jpg"); // Load your texture
+
+  CurruntMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+
+  CollarMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+  PlacetMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+
+  PocketMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+  BackDetailsMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+  BottomCUtMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+});
+
+
+document.getElementById("brown").addEventListener("click", () => {
+  // Add Texture
+  const textureLoader = new THREE.TextureLoader();
+  const texture = textureLoader.load("./components/Texture/brown.jpg"); // Load your texture
+
+  CurruntMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+
+  CollarMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+  PlacetMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+
+  PocketMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+  BackDetailsMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+  BottomCUtMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+});
+
+
+document.getElementById("cream").addEventListener("click", () => {
+  // Add Texture
+  const textureLoader = new THREE.TextureLoader();
+  const texture = textureLoader.load("./components/Texture/cream.jpg"); // Load your texture
+
+  CurruntMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+
+  CollarMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+  PlacetMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+
+  PocketMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+  BackDetailsMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+  BottomCUtMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+});
+
+
+
+document.getElementById("gray").addEventListener("click", () => {
+  // Add Texture
+  const textureLoader = new THREE.TextureLoader();
+  const texture = textureLoader.load("./components/Texture/gray.jpg"); // Load your texture
+
+  CurruntMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+
+  CollarMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+  PlacetMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+
+  PocketMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+  BackDetailsMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+  BottomCUtMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+});
+
+document.getElementById("navy").addEventListener("click", () => {
+  // Add Texture
+  const textureLoader = new THREE.TextureLoader();
+  const texture = textureLoader.load("./components/Texture/navy blue.jpg"); // Load your texture
+
+  CurruntMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+
+  CollarMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+  PlacetMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+
+  PocketMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+  BackDetailsMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+  BottomCUtMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+});
+
+document.getElementById("red").addEventListener("click", () => {
+  // Add Texture
+  const textureLoader = new THREE.TextureLoader();
+  const texture = textureLoader.load("./components/Texture/red.jpg"); // Load your texture
+
+  CurruntMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+
+  CollarMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+  PlacetMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+
+  PocketMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+  BackDetailsMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+  BottomCUtMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+});
+
+
+document.getElementById("yellow").addEventListener("click", () => {
+  // Add Texture
+  const textureLoader = new THREE.TextureLoader();
+  const texture = textureLoader.load("./components/Texture/yellow.jpg"); // Load your texture
+
+  CurruntMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+
+  CollarMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+  PlacetMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+
+  PocketMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+  BackDetailsMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+  BottomCUtMesh.traverse(function (child) {
+    if (child.isMesh) {
+      // child.material = new THREE.MeshBasicMaterial({ color: 0xffffff }); // Apply new material
+      child.material = new THREE.MeshStandardMaterial({ map: texture });
+    }
+  });
+});
