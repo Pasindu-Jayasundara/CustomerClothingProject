@@ -1,0 +1,86 @@
+table,
+      td,
+      th {
+        border: 1px solid;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .mybutton {
+        position: absolute;
+        width: 200px;
+        height: 50px;
+        z-index: 10;
+        right: 50px;
+        bottom: 40px;
+        background-color: white;
+        color: black;
+        font-weight: bolder;
+      }
+      .ImageButton {
+        background-color: rgb(123, 122, 122);
+        width: 170px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0px solid transparent;
+        border-radius: 20px;
+      }
+
+      /* offcanvas CSS */
+      /* The off-canvas sidebar styling */
+      .offcanvasType {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(92, 91, 91);
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+
+      .offcanvasType a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .offcanvasType a:hover {
+        color: #f1f1f1;
+      }
+
+      .offcanvasType .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      /* Button to open the sidebar */
+      .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: #111;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+      }
+
+      .openbtn:hover {
+        background-color: #444;
+      }
+      span {
+        color: white;
+        font-weight: bold;
+      }

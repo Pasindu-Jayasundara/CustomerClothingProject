@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>index model</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+       table,
+      td,
+      th {
+        border: 1px solid;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .mybutton {
+        position: absolute;
+        width: 200px;
+        height: 50px;
+        z-index: 10;
+        right: 50px;
+        bottom: 10px;
+        background-color: white;
+        color: black;
+        font-weight: bolder;
+      }
+      .ImageButton {
+        background-color: rgb(123, 122, 122);
+        width: 170px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0px solid transparent;
+        border-radius: 20px;
+      }
+
+      /* offcanvas CSS */
+      /* The off-canvas sidebar styling */
+      .offcanvasType {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(92, 91, 91);
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+
+      .offcanvasType a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .offcanvasType a:hover {
+        color: #f1f1f1;
+      }
+
+      .offcanvasType .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      /* Button to open the sidebar */
+      .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: #111;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+      }
+
+      .openbtn:hover {
+        background-color: #444;
+      }
+    </style>
+
+    <script
+      async
+      src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"
+    ></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@v0.163.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@v0.163.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body style="background-color: white">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="row">
+
+          
+
+            <div class="col-12 text-center">
+              <h1 id="Withplacket">Clothing Project</h1>
+            </div>
+            <!-- button -->
+            <button
+              class="btn btn-primary mybutton"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasRight"
+              aria-controls="offcanvasRight"
+            >
+              Purchace
+            </button>
+
+            <div class="col-lg-3 col-12 mt-3">
+              <div class="row mt-0">
+                <!-- Accordian type -->
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button justify-content-center"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                        id="CollarEnter"
+                      >
+                        <div class="col-12 text-center">
+                          <div class="row">
+                            <div class="col-12">
+                              <img
+                                src="NewShirtModel/Collar/collarIcons/mainCategory.svg"
+                                width="80px"
+                                height="80px"
+                                alt=""
+                              />
+                            </div>
+                            <div class="col-12">
+                              <h6>Collar type</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseOne"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        <div class="col-12">
+                          <div class="row" id="CollarOut">
+                            <div class="col-12 m-3" style="cursor: pointer">
+                              <img
+                                src="NewShirtModel/Collar/collarIcons/BuisnessClassicCollar.svg"
+                                width="50px"
+                                height="50px"
+                                alt=""
+                              />
+                              <span id="buisness Classic Collar"
+                                >buisness Classic Collar</span
+                              >
+                            </div>
+                            <div class="col-12 m-3" style="cursor: pointer">
+                              <img
+                                src="NewShirtModel/Collar/collarIcons/ButtonDownClassicCollar.svg"
+                                width="50px"
+                                height="50px"
+                                alt=""
+                              />
+                              <span id="Button down classic Collar"
+                                >buisness Down Classic Collar</span
+                              >
+                            </div>
+                            <div class="col-12 m-3" style="cursor: pointer">
+                            
+                              <span id="ButtonDownmodernCollar"
+                                >Button Down Modern Collar</span
+                              >
+                            </div>
+                            <div class="col-12 m-3" style="cursor: pointer">
+                              <img
+                                src="NewShirtModel/Collar/collarIcons/CutAwayClassicCOllar.svg"
+                                width="50px"
+                                height="50px"
+                                alt=""
+                              />
+                              <span id="CutawayclassicCollar"
+                                >Cut Away Classic Collar</span
+                              >
+                            </div>
+                            <div class="col-12 m-3" style="cursor: pointer">
+                              <img
+                                src="NewShirtModel/Collar/collarIcons/MOACollar.svg"
+                                width="50px"
+                                height="50px"
+                                alt=""
+                              />
+                              <span id="MOACollar">MOA Collar</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed justify-content-center"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="collapseTwo"
+                        id="Packet"
+                      >
+                        <div class="col-12 text-center">
+                          <div class="row">
+                            <div class="col-12">
+                              <img
+                                src="NewShirtModel/Placket/icons/main.svg"
+                                width="80px"
+                                height="80px"
+                                alt=""
+                              />
+                            </div>
+                            <div class="col-12">Packet Type</div>
+                          </div>
+                        </div>
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseTwo"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        <div class="col-12">
+                          <div class="row">
+                            <div class="col-12 m-3" style="cursor: pointer">
+                              <img
+                                src="NewShirtModel/Placket/icons/Button.svg"
+                                width="50px"
+                                height="50px"
+                                alt=""
+                              />
+                              <span id="Button">Button</span>
+                            </div>
+                            <div class="col-12 m-3" style="cursor: pointer">
+                              <img
+                                src="NewShirtModel/Placket/icons/TuxedoPlacket.svg"
+                                width="50px"
+                                height="50px"
+                                alt=""
+                              />
+                              <span id="Tuxedoplacket">Tuxedo placket</span>
+                            </div>
+                            <div class="col-12 m-3" style="cursor: pointer">
+                              <img
+                                src="NewShirtModel/Placket/icons/withoutPlacket.svg"
+                                width="50px"
+                                height="50px"
+                                alt=""
+                              />
+                              <span id="Withoutplacket">Without placket</span>
+                            </div>
+                            <div class="col-12 m-3" style="cursor: pointer">
+                              <img
+                                src="NewShirtModel/Placket/icons/WithPlacket.svg"
+                                width="50px"
+                                height="50px"
+                                alt=""
+                              />
+                              <span id="Withplacket">With placket</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed justify-content-center"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                        id="Pocket"
+                      >
+                        <div class="col-12 text-center">
+                          <div class="row">
+                            <div class="col-12">
+                              <img
+                                src="NewShirtModel/Pocket/icons/MainImage.svg"
+                                width="80px"
+                                height="80px"
+                                alt=""
+                              />
+                            </div>
+                            <div class="col-12">Pocket Type</div>
+                          </div>
+                        </div>
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseThree"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        <div class="col-12">
+                          <div class="row">
+                            <div class="col-12 m-3" style="cursor: pointer">
+                              <img
+                                src="NewShirtModel/Pocket/icons/NoPoket.svg"
+                                width="50px"
+                                height="50px"
+                                alt=""
+                              />
+                              <span id="default">No Pcoket</span>
+                            </div>
+                            <div class="col-12 m-3" style="cursor: pointer">
+                              <img
+                                src="NewShirtModel/Pocket/icons/WithPocket.svg"
+                                width="50px"
+                                height="50px"
+                                alt=""
+                              />
+                              <span id="withpocket">With Pcoket</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed justify-content-center"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapsefour"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                        id="backShoulder"
+                      >
+                        <div class="col-12 text-center">
+                          <div class="row">
+                            <div class="col-12">
+                              <img
+                                src="NewShirtModel/BackDetails/icons/MainImage.svg"
+                                width="50px"
+                                height="50px"
+                                alt=""
+                              />
+                            </div>
+
+                            <div class="col-12">Back Shoulder</div>
+                          </div>
+                        </div>
+                      </button>
+                    </h2>
+                    <div
+                      id="collapsefour"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        <div class="col-12">
+                          <div class="row">
+                            <div class="col-12 m-3" style="cursor: pointer">
+                              <img
+                                src="NewShirtModel/BackDetails/icons/BAckWaistDartsBack.svg"
+                                width="50px"
+                                height="50px"
+                              />
+                              <span id="BackwaistdartsBack"
+                                >Back waist darts Back</span
+                              >
+                            </div>
+                            <div class="col-12 m-3" style="cursor: pointer">
+                              <img
+                                src="NewShirtModel/BackDetails/icons/centerFoldsBack.svg"
+                                width="50px"
+                                height="50px"
+                              />
+                              <span id="CenterfoldsBack"
+                                >Center folds Back</span
+                              >
+                            </div>
+                            <div class="col-12 m-3" style="cursor: pointer">
+                              <img
+                                src="NewShirtModel/BackDetails/icons/NoBackDetails.svg"
+                                width="50px"
+                                height="50px"
+                              />
+                              <span id="NobackdetailsBack"
+                                >No back details Back</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapsefive"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                          id="BottomCut"
+                      >
+                        <div class="col-12 text-center">
+                          <div class="row">
+                            <div class="col-12">
+                              <img
+                                src="NewShirtModel/BottomCut/icons/classicBottomCut.svg"
+                                width="50px"
+                                height="50px"
+                                alt=""
+                              />
+                            </div>
+                            <div class="col-12">Bottom Cut</div>
+                          </div>
+                        </div>
+                      </button>
+                    </h2>
+                    <div
+                      id="collapsefive"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body" id="BottomCutBody">
+                        <div class="col-12">
+                          <div class="row">
+                            <div class="col-12 m-3" style="cursor: pointer">
+                              <img
+                                src="NewShirtModel/BottomCut/icons/classicBottomCut.svg"
+                                width="50px"
+                                height="50px"
+                              />
+                              <span id="ClassicBottomCut"
+                                >Classic Bottom Cut</span
+                              >
+                            </div>
+                            <div class="col-12 m-3" style="cursor: pointer">
+                              <img
+                                src="NewShirtModel/BottomCut/icons/ModernBottomCut.svg"
+                                width="50px"
+                                height="50px"
+                              />
+                              <span id="ModernBottomCut"
+                                >Modern Bottom Cut</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="col-12 mt-1 mb-3 text-center"
+                  style="padding-left: 30px"
+                >
+                  <div class="row">
+                    <div class="col-12" style="margin-top: 10px"></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <div
+                        class="offcanvas offcanvas-end"
+                        tabindex="-1"
+                        id="offcanvasRight"
+                        aria-labelledby="offcanvasRightLabel"
+                      >
+                        <div class="offcanvas-header">
+                          <h5
+                            class="offcanvas-title fw-bold"
+                            id="offcanvasRightLabel"
+                          >
+                            Customize Your Shirt
+                          </h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div class="offcanvas-body">
+                          <!-- offcanvace Body -->
+                          <div class="col-10 offset-1">
+                            <div class="row">
+                              <div class="col-12">
+                                <span class="fw-bold text-center"
+                                  >Answer a few questions and have your
+                                  measurements ready in no time.</span
+                                >
+                              </div>
+
+                              <!-- Age input -->
+                              <div class="col-12 mt-2">
+                                <div class="row">
+                                  <div class="col-6 mb-3 text-start">
+                                    <span>Age</span>
+                                  </div>
+                                  <div class="col-6 mb-3 text-end">
+                                    <span id="ageOutput">50</span>
+                                  </div>
+                                  <div class="col-12">
+                                    <input
+                                      type="range"
+                                      class="form-range"
+                                      id="ageRange"
+                                      onchange="changeRangeAge()"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- weight -->
+                              <div class="col-12 mt-2">
+                                <div class="row">
+                                  <div class="col-6 mb-3 text-start">
+                                    <span>Weight</span>
+                                  </div>
+                                  <div class="col-6 mb-3 text-end">
+                                    <span id="WeightOutput">226 lbs</span>
+                                  </div>
+                                  <div class="col-12">
+                                    <input
+                                      min="121"
+                                      max="331"
+                                      type="range"
+                                      class="form-range"
+                                      id="WeightRange"
+                                      onchange="changeRangeWeight()"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- height -->
+                              <div class="col-12 mt-2">
+                                <div class="row">
+                                  <div class="col-6 mb-3 text-start">
+                                    <span>Weight</span>
+                                  </div>
+                                  <div class="col-6 mb-2 text-end">
+                                    <span id="HeightOutput">226 cm</span>
+                                  </div>
+                                  <div class="col-12">
+                                    <input
+                                      name="height"
+                                      min="100"
+                                      max="250"
+                                      step="1"
+                                      value="175"
+                                      type="range"
+                                      class="form-range"
+                                      id="heightRange"
+                                      onchange="changeRangeheight()"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- Collar Size -->
+                              <table>
+                                <tr>
+                                  <th>Size (inches)</th>
+                                  <th>Size (cm)</th>
+                                  <th>Collar Size Type</th>
+                                </tr>
+                                <tr>
+                                  <td>14</td>
+                                  <td>35.56</td>
+                                  <td>Small</td>
+                                </tr>
+                                <tr>
+                                  <td>15</td>
+                                  <td>38.10</td>
+                                  <td>Medium</td>
+                                </tr>
+                                <tr>
+                                  <td>16</td>
+                                  <td>40.64</td>
+                                  <td>Large</td>
+                                </tr>
+                                <tr>
+                                  <td>17</td>
+                                  <td>43.18</td>
+                                  <td>X-Large</td>
+                                </tr>
+                                <tr>
+                                  <td>18</td>
+                                  <td>45.72</td>
+                                  <td>XX-Large</td>
+                                </tr>
+                              </table>
+
+                              <!-- meterial -->
+                              <div class="col-12 mt-5">
+                                <div class="row">
+                                  <div class="col-12">
+                                    <span class="fw-bold tet-black-50 fs-4">
+                                      Choose meterial color
+                                    </span>
+                                  </div>
+                                  <div
+                                    class="col-4 mt-4 d-flex align-items-center justify-content-center border border-black border-1"
+                                    style="height: 50px"
+                                  >
+                                    <span>White</span>
+                                  </div>
+
+                                  <div
+                                    class="col-4 mt-4 d-flex align-items-center justify-content-center border border-black border-1 bg-danger"
+                                    style="height: 50px"
+                                  >
+                                    <span>Red</span>
+                                  </div>
+
+                                  <div
+                                    class="col-4 mt-4 d-flex align-items-center justify-content-center border border-black border-1 bg-primary"
+                                    style="height: 50px"
+                                  >
+                                    <span>Blue</span>
+                                  </div>
+
+                                  <div
+                                    class="col-4 mt-0 d-flex align-items-center justify-content-center border border-black border-1 bg-warning"
+                                    style="height: 50px"
+                                  >
+                                    <span>Yellow</span>
+                                  </div>
+
+                                  <div
+                                    class="col-4 mt-0 d-flex align-items-center justify-content-center border border-black border-1 bg-secondary"
+                                    style="height: 50px"
+                                  >
+                                    <span>Gray</span>
+                                  </div>
+
+                                  <div
+                                    class="col-4 mt-0 d-flex align-items-center justify-content-center border border-black border-1 bg-Black"
+                                    style="height: 50px"
+                                  >
+                                    <span>Black</span>
+                                  </div>
+
+                                  <div
+                                    class="col-4 mt-0 d-flex align-items-center justify-content-center border border-black border-1 bg-green"
+                                    style="height: 50px"
+                                  >
+                                    <span>Green</span>
+                                  </div>
+
+                                  <div
+                                    class="col-4 mt-0 d-flex align-items-center justify-content-center border border-black border-1 bg-info"
+                                    style="height: 50px"
+                                  >
+                                    <span>Light Blue</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- Summery Table -->
+                              <div class="col-12">
+                                <div class="row">
+                                  <div class="col-12 mt-5 mb-2">
+                                    <span class="fw-bold fs-4">Summery</span>
+                                  </div>
+                                  <table
+                                    class="text-center"
+                                    style="border: 1px solid white"
+                                  >
+                                    <tr>
+                                      <th>Type</th>
+                                      <th>Category</th>
+                                    </tr>
+                                    <tr>
+                                      <td>Collar Type</td>
+                                      <td id="Collar_table_id"></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Placket Type</td>
+                                      <td id="placekt_table_id"></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Pcoket Type</td>
+                                      <td id="pocket_table_id"></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Back Type</td>
+                                      <td id="Back_Details_table_id"></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Bottom Cut</td>
+                                      <td id="Bottom_cut_table_id"></td>
+                                    </tr>
+                                  </table>
+
+                                  <button
+                                    id="testButton"
+                                    class="btn btn-outline-primary"
+                                    style="width: 100%"
+                                  >
+                                    Summery Button
+                                  </button>
+                                </div>
+                              </div>
+
+                              <div class="col-12 mt-4 mb-4 d-grid">
+                                <button class="btn btn-outline-dark fw-bold" >
+                                  Checkout ->
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-9 col-12" id="ViewModel"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/details.js"></script>
+  </body>
+</html>
