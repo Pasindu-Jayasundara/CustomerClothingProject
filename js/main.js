@@ -113,6 +113,7 @@ let CurruntMesh;
 // Load Components
 let CollarMesh;
 let CuffMesh;
+let PlacetMesh;
 
 loader.load("Default/Default.glb", (gltf) => {
   const mesh = gltf.scene;
@@ -255,24 +256,24 @@ document.getElementById("DoubleButtonCuff").addEventListener("click", () => {
 // Placket
 document.getElementById("Button").addEventListener("click", () => {
   placketDesing = "Button Design";
-  LoadVarient();
+  ChangePlacket(placketDesing);
 });
 document.getElementById("Tuxedoplacket").addEventListener("click", () => {
   placketDesing = "Tuxedo placket";
-  LoadVarient();
+  ChangePlacket(placketDesing);
 });
 document.getElementById("Withoutplacket").addEventListener("click", () => {
   placketDesing = "Without placket";
-  LoadVarient();
+  ChangePlacket(placketDesing);
 });
 document.getElementById("Withplacket").addEventListener("click", () => {
   placketDesing = "With placket";
-  LoadVarient();
+  ChangePlacket(placketDesing);
 });
 // Pocket
 document.getElementById("default").addEventListener("click", () => {
   PocketDesing = "No Pocket";
-  LoadVarient();
+  ChangePlacket(placketDesing);
 });
 document.getElementById("withpocket").addEventListener("click", () => {
   PocketDesing = "With Pocket";
@@ -389,6 +390,46 @@ function ChangeCuff(cuffDesign) {
       CuffMesh = gltf.scene; // Store the new mesh
       CuffMesh.position.set(0, 1.05, -1);
       scene.add(CuffMesh); // Add the new mesh to the scene
+    });
+  }
+}
+
+// change Placket Type
+
+function ChangePlacket(placketDesign) {
+  if (placketDesign == "null") {
+    scene.remove(PlacetMesh);
+  } else if (placketDesign == "Button Design") {
+    alert(placketDesign);
+    scene.remove(PlacetMesh);
+    loader.load("Placket/Button.glb", (gltf) => {
+      PlacetMesh = gltf.scene; // Store the new mesh
+      PlacetMesh.position.set(0, 1.05, -1);
+      scene.add(PlacetMesh); // Add the new mesh to the scene
+    });
+  } else if (placketDesign == "Tuxedo placket") {
+    alert(placketDesign);
+    scene.remove(PlacetMesh);
+    loader.load("Placket/Tuxedo placket.glb", (gltf) => {
+      PlacetMesh = gltf.scene; // Store the new mesh
+      PlacetMesh.position.set(0, 1.05, -1);
+      scene.add(PlacetMesh); // Add the new mesh to the scene
+    });
+  } else if (placketDesign == "Without placket") {
+    alert(placketDesign);
+    scene.remove(PlacetMesh);
+    loader.load("Placket/Without placket.glb", (gltf) => {
+      PlacetMesh = gltf.scene; // Store the new mesh
+      PlacetMesh.position.set(0, 1.05, -1);
+      scene.add(PlacetMesh); // Add the new mesh to the scene
+    });
+  }else if (placketDesign == "With placket") {
+    alert(placketDesign);
+    scene.remove(PlacetMesh);
+    loader.load("Placket/With placket.glb", (gltf) => {
+      PlacetMesh = gltf.scene; // Store the new mesh
+      PlacetMesh.position.set(0, 1.05, -1);
+      scene.add(PlacetMesh); // Add the new mesh to the scene
     });
   }
 }
