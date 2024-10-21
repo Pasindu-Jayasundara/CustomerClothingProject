@@ -115,6 +115,7 @@ let CollarMesh;
 let CuffMesh;
 let PlacetMesh;
 let PocketMesh;
+let BackDetailsMesh;
 
 loader.load("Default/Default.glb", (gltf) => {
   const mesh = gltf.scene;
@@ -283,15 +284,15 @@ document.getElementById("withpocket").addEventListener("click", () => {
 // Back Details
 document.getElementById("BackwaistdartsBack").addEventListener("click", () => {
   backShoulder = "Back waist darts Back";
-  LoadVarient();
+  ChangeBackDetails(backShoulder);
 });
 document.getElementById("CenterfoldsBack").addEventListener("click", () => {
   backShoulder = "Center folds Back";
-  LoadVarient();
+  ChangeBackDetails(backShoulder);
 });
 document.getElementById("NobackdetailsBack").addEventListener("click", () => {
   backShoulder = "No back details Back";
-  LoadVarient();
+  ChangeBackDetails('null');
 });
 // Bottom Cut
 document.getElementById("ClassicBottomCut").addEventListener("click", () => {
@@ -447,6 +448,29 @@ function ChangePocket(PocketDesing) {
       PocketMesh = gltf.scene; // Store the new mesh
       PocketMesh.position.set(0, 1.05, -1);
       scene.add(PocketMesh); // Add the new mesh to the scene
+    });
+  }
+}
+
+// Change Back Details
+function ChangeBackDetails(backDesign) {
+  if (backDesign == "null") {
+    scene.remove(BackDetailsMesh);
+  } else if (backDesign == "Back waist darts Back") {
+    alert(backDesign);
+    scene.remove(BackDetailsMesh);
+    loader.load("BackDetails/Back waist darts Back.glb", (gltf) => {
+      BackDetailsMesh = gltf.scene; // Store the new mesh
+      BackDetailsMesh.position.set(0, 1.05, -1);
+      scene.add(BackDetailsMesh); // Add the new mesh to the scene
+    });
+  } else if (backDesign == "Center folds Back") {
+    alert(backDesign);
+    scene.remove(BackDetailsMesh);
+    loader.load("BackDetails/Center folds Back.glb", (gltf) => {
+      BackDetailsMesh = gltf.scene; // Store the new mesh
+      BackDetailsMesh.position.set(0, 1.05, -1);
+      scene.add(BackDetailsMesh); // Add the new mesh to the scene
     });
   }
 }
