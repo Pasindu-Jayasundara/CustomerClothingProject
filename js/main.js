@@ -114,6 +114,7 @@ let CurruntMesh;
 let CollarMesh;
 let CuffMesh;
 let PlacetMesh;
+let PocketMesh;
 
 loader.load("Default/Default.glb", (gltf) => {
   const mesh = gltf.scene;
@@ -273,11 +274,11 @@ document.getElementById("Withplacket").addEventListener("click", () => {
 // Pocket
 document.getElementById("default").addEventListener("click", () => {
   PocketDesing = "No Pocket";
-  ChangePlacket(placketDesing);
+  ChangePocket(PocketDesing);
 });
 document.getElementById("withpocket").addEventListener("click", () => {
   PocketDesing = "With Pocket";
-  LoadVarient();
+  ChangePocket(PocketDesing);
 });
 // Back Details
 document.getElementById("BackwaistdartsBack").addEventListener("click", () => {
@@ -423,13 +424,29 @@ function ChangePlacket(placketDesign) {
       PlacetMesh.position.set(0, 1.05, -1);
       scene.add(PlacetMesh); // Add the new mesh to the scene
     });
-  }else if (placketDesign == "With placket") {
+  } else if (placketDesign == "With placket") {
     alert(placketDesign);
     scene.remove(PlacetMesh);
     loader.load("Placket/With placket.glb", (gltf) => {
       PlacetMesh = gltf.scene; // Store the new mesh
       PlacetMesh.position.set(0, 1.05, -1);
       scene.add(PlacetMesh); // Add the new mesh to the scene
+    });
+  }
+}
+
+// Change Pocket Type
+function ChangePocket(PocketDesing) {
+  if (PocketDesing == "No Pocket") {
+    alert(PocketDesing);
+    scene.remove(PocketMesh);
+  } else if (PocketDesing == "With Pocket") {
+    alert(PocketDesing);
+    scene.remove(PocketMesh);
+    loader.load("Pocket/WithPocket.glb", (gltf) => {
+      PocketMesh = gltf.scene; // Store the new mesh
+      PocketMesh.position.set(0, 1.05, -1);
+      scene.add(PocketMesh); // Add the new mesh to the scene
     });
   }
 }
