@@ -116,6 +116,7 @@ let CuffMesh;
 let PlacetMesh;
 let PocketMesh;
 let BackDetailsMesh;
+let BottomCUtMesh;
 
 loader.load("Default/Default.glb", (gltf) => {
   const mesh = gltf.scene;
@@ -292,16 +293,16 @@ document.getElementById("CenterfoldsBack").addEventListener("click", () => {
 });
 document.getElementById("NobackdetailsBack").addEventListener("click", () => {
   backShoulder = "No back details Back";
-  ChangeBackDetails('null');
+  ChangeBackDetails("null");
 });
 // Bottom Cut
 document.getElementById("ClassicBottomCut").addEventListener("click", () => {
   BottomCut = "Classic Bottom Cut";
-  LoadVarient();
+  ChangeBottomCut(BottomCut);
 });
 document.getElementById("ModernBottomCut").addEventListener("click", () => {
   BottomCut = "Moder nBottom Cut";
-  LoadVarient();
+  ChangeBottomCut(BottomCut);
 });
 
 // Load Model Function
@@ -471,6 +472,27 @@ function ChangeBackDetails(backDesign) {
       BackDetailsMesh = gltf.scene; // Store the new mesh
       BackDetailsMesh.position.set(0, 1.05, -1);
       scene.add(BackDetailsMesh); // Add the new mesh to the scene
+    });
+  }
+}
+
+// Change Bottom Cut
+function ChangeBottomCut(bottomcutDesign) {
+  if (bottomcutDesign == "Classic Bottom Cut") {
+    alert(bottomcutDesign);
+    scene.remove(BottomCUtMesh);
+    loader.load("Bottom Cut/Classic Bottom Cut.glb", (gltf) => {
+      BottomCUtMesh = gltf.scene; // Store the new mesh
+      BottomCUtMesh.position.set(0, 1.05, -1);
+      scene.add(BottomCUtMesh); // Add the new mesh to the scene
+    });
+  } else if (bottomcutDesign == "Moder nBottom Cut") {
+    alert(bottomcutDesign);
+    scene.remove(BottomCUtMesh);
+    loader.load("Bottom Cut/Modern Bottom Cut.glb", (gltf) => {
+      BottomCUtMesh = gltf.scene; // Store the new mesh
+      BottomCUtMesh.position.set(0, 1.05, -1);
+      scene.add(BottomCUtMesh); // Add the new mesh to the scene
     });
   }
 }
