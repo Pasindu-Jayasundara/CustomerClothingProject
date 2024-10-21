@@ -110,8 +110,9 @@ scene.add(light);
 const loader = new GLTFLoader().setPath("components/");
 
 let CurruntMesh;
-// Load COomponents
+// Load Components
 let CollarMesh;
+let CuffMesh;
 
 loader.load("Default/Default.glb", (gltf) => {
   const mesh = gltf.scene;
@@ -244,11 +245,11 @@ document.getElementById("MOACollar").addEventListener("click", () => {
 // Cuff
 document.getElementById("SingleButtonCuff").addEventListener("click", () => {
   CuffDesign = "Single Button Cuff";
-  LoadVarient();
+  ChangeCuff(CuffDesign);
 });
 document.getElementById("DoubleButtonCuff").addEventListener("click", () => {
   CuffDesign = "Double Button Cuff";
-  LoadVarient();
+  ChangeCuff(CuffDesign);
 });
 
 // Placket
@@ -365,6 +366,29 @@ function CollarChange(CollarDesign) {
       CollarMesh = gltf.scene; // Store the new mesh
       CollarMesh.position.set(0, 1.05, -1);
       scene.add(CollarMesh); // Add the new mesh to the scene
+    });
+  }
+}
+
+// Change Cuff Tpes
+function ChangeCuff(cuffDesign) {
+  if (cuffDesign == null) {
+    scene.remove(CuffMesh);
+  } else if (cuffDesign == "Single Button Cuff") {
+    alert(cuffDesign);
+    scene.remove(CuffMesh);
+    loader.load("Cuff/Single button Cuff.glb", (gltf) => {
+      CuffMesh = gltf.scene; // Store the new mesh
+      CuffMesh.position.set(0, 1.05, -1);
+      scene.add(CuffMesh); // Add the new mesh to the scene
+    });
+  } else if (cuffDesign == "Double Button Cuff") {
+    alert(cuffDesign);
+    scene.remove(CuffMesh);
+    loader.load("Cuff/Double button Cuff.glb", (gltf) => {
+      CuffMesh = gltf.scene; // Store the new mesh
+      CuffMesh.position.set(0, 1.05, -1);
+      scene.add(CuffMesh); // Add the new mesh to the scene
     });
   }
 }
