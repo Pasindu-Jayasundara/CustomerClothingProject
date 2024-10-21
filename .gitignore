@@ -27,3 +27,7 @@ Thumbs.db
 # Ignore npm package lock file (optional)
 package-lock.json
 yarn.lock
+
+# Ignore Blend Components
+components/
+BlendModel/
