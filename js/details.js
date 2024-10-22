@@ -20,6 +20,9 @@ function Next2Page() {
 function next3Page() {
   window.location = "shoulderType.html";
 }
+function next4Page() {
+  window.location = "collarTypes.html";
+}
 
 function chooseBodyShape(shape) {
   document.getElementById("Triangle").classList.remove("active");
@@ -35,6 +38,24 @@ function chooseShoulderType(shape) {
   document.getElementById("normal").classList.remove("active");
   document.getElementById("sloping").classList.remove("active");
   document.getElementById("dontknow").classList.remove("active");
+
+  document.getElementById(shape).classList.toggle("active");
+}
+
+function chooseCollarSize(shape) {
+  document.getElementById("13s").classList.remove("active");
+  document.getElementById("13/2s").classList.remove("active");
+  document.getElementById("14s").classList.remove("active");
+  document.getElementById("14/2s").classList.remove("active");
+  document.getElementById("15s").classList.remove("active");
+  document.getElementById("15/2s").classList.remove("active");
+  document.getElementById("16s").classList.remove("active");
+  document.getElementById("16/2s").classList.remove("active");
+  document.getElementById("17s").classList.remove("active");
+  document.getElementById("17/2s").classList.remove("active");
+  document.getElementById("18s").classList.remove("active");
+  document.getElementById("18/2s").classList.remove("active");
+
 
   document.getElementById(shape).classList.toggle("active");
 }
