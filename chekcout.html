@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shirt Checkout</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+
+      .checkout-container {
+        width: 80%;
+        margin: 20px auto;
+      }
+
+      .checkout-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .logo {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .progress-bar {
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+      }
+
+      .step {
+        text-align: center;
+        padding: 10px;
+        background-color: #ddd;
+        border-radius: 20px;
+        width: 20%;
+      }
+
+      .completed {
+        background-color: #28a745;
+        color: white;
+      }
+
+      .checkout-main {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .order-summary,
+      .checkout-form {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 45%;
+      }
+
+      .order-summary h2,
+      .checkout-form h2 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .product {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .product img {
+        width: 80px;
+        margin-right: 15px;
+      }
+
+      .product-info p {
+        margin: 5px 0;
+      }
+
+      .price-details p,
+      .total {
+        font-weight: bold;
+      }
+
+      .promo-code {
+        margin-top: 20px;
+      }
+
+      .promo-code input {
+        padding: 8px;
+        margin-right: 10px;
+        width: 60%;
+      }
+
+      .promo-code button {
+        padding: 8px 15px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .promo-code button:hover {
+        background-color: #218838;
+      }
+
+      label {
+        font-weight: bold;
+        margin-top: 15px;
+        display: block;
+      }
+
+      input {
+        padding: 10px;
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button[type="submit"] {
+        width: 100%;
+        padding: 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="checkout-container">
+      <!-- Header with logo and progress bar -->
+      <header class="checkout-header">
+        <div class="logo">My CLothing Project</div>
+        <div class="progress-bar">
+          <div class="step completed">Cart</div>
+          <div class="step">Shipping</div>
+          <div class="step">Payment</div>
+          <div class="step">Review</div>
+          <div class="step">Confirmation</div>
+        </div>
+      </header>
+
+      <!-- Main Checkout Form -->
+      <div class="checkout-main">
+        <!-- Left Section: Order Summary -->
+        <div class="order-summary">
+          <h2>Order Summary</h2>
+          <div class="product">
+            <img src="NewShirtModel/Fabric/fabric.jpg" alt="Shirt Image" />
+            <div class="product-info">
+              <p>Shirt - Blue</p>
+              <p>Size: M</p>
+              <p>Qty: 1</p>
+              <p>$29.99</p>
+            </div>
+          </div>
+          <div class="price-details">
+            <p>Subtotal: $29.99</p>
+            <p>Shipping: $5.00</p>
+            <p>Tax: $2.50</p>
+            <p class="total">Total: $37.49</p>
+          </div>
+          <div class="promo-code">
+            <label for="promo">Promo Code:</label>
+            <input type="text" id="promo" placeholder="Enter code" />
+            <button id="apply-code">Apply</button>
+          </div>
+        </div>
+
+        <!-- Right Section: Payment and Shipping Form -->
+        <div class="checkout-form">
+          <h2>Shipping Details</h2>
+          <form>
+            <label for="fullname">Full Name</label>
+            <input
+              type="text"
+              id="fullname"
+              placeholder="Type Your Name"
+              required
+            />
+
+            <label for="address">Address</label>
+            <input
+              type="text"
+              id="address"
+              placeholder="123 Main St"
+              required
+            />
+
+            <label for="city">City</label>
+            <input type="text" id="city" placeholder="dehiwala" required />
+
+            <label for="state">State</label>
+            <input type="text" id="state" placeholder="NY" required />
+
+            <label for="zip">Zip Code</label>
+            <input type="text" id="zip" placeholder="10001" required />
+
+            <h2>Payment Details</h2>
+            <label for="cardname">Name on Card</label>
+            <input type="text" id="cardname" placeholder="John Doe" required />
+
+            <label for="cardnumber">Card Number</label>
+            <input
+              type="text"
+              id="cardnumber"
+              placeholder="1111-2222-3333-4444"
+              required
+            />
+
+            <label for="expdate">Expiration Date</label>
+            <input type="text" id="expdate" placeholder="MM/YY" required />
+
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" placeholder="123" required />
+
+            <button type="submit" id="place-order">Place Order</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

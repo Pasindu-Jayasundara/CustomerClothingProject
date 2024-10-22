@@ -28,7 +28,7 @@ function next5Page() {
 }
 
 function chieckoutPage() {
-  window.location = "shirtFittedType.html";
+  window.location = "chekcout.html";
 }
 
 function chooseBodyShape(shape) {
