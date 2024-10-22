@@ -117,6 +117,7 @@ let PlacetMesh;
 let PocketMesh;
 let BackDetailsMesh;
 let BottomCUtMesh;
+let DummyMesh;
 
 loader.load("Default/Default.glb", (gltf) => {
   const mesh = gltf.scene;
@@ -124,6 +125,21 @@ loader.load("Default/Default.glb", (gltf) => {
   scene.add(mesh);
   CurruntMesh = mesh;
 });
+loader.load("Default/Dummy.glb", (gltf) => {
+  const mesh = gltf.scene;
+  mesh.position.set(0, 1.05, -1);
+  scene.add(mesh);
+  DummyMesh = mesh;
+});
+
+if (backShoulder == "null") {
+  loader.load("BackDetails/No back details Back.glb", (gltf) => {
+    const mesh = gltf.scene;
+    mesh.position.set(0, 1.05, -1);
+    scene.add(mesh);
+    BackDetailsMesh = mesh;
+  });
+}
 
 function animate() {
   requestAnimationFrame(animate);
@@ -324,21 +340,20 @@ function loadNewMesh(modelName) {
 }
 
 // Summery Button
-document.getElementById("testButton").addEventListener("click", testButton);
-function testButton() {
-  document.getElementById("Collar_table_id").innerHTML = CollarDesign;
-  document.getElementById("placekt_table_id").innerHTML = placketDesing;
-  document.getElementById("pocket_table_id").innerHTML = PocketDesing;
-  document.getElementById("Back_Details_table_id").innerHTML = backShoulder;
-  document.getElementById("Bottom_cut_table_id").innerHTML = BottomCut;
-}
+// document.getElementById("testButton").addEventListener("click", testButton);
+// function testButton() {
+//   document.getElementById("Collar_table_id").innerHTML = CollarDesign;
+//   document.getElementById("placekt_table_id").innerHTML = placketDesing;
+//   document.getElementById("pocket_table_id").innerHTML = PocketDesing;
+//   document.getElementById("Back_Details_table_id").innerHTML = backShoulder;
+//   document.getElementById("Bottom_cut_table_id").innerHTML = BottomCut;
+// }
 
 // Collar Change Function
 function CollarChange(CollarDesign) {
   if (CollarDesign == "null") {
     scene.remove(CollarMesh);
   } else if (CollarDesign == "Buisness Classic Collar") {
-    alert(CollarDesign);
     scene.remove(CollarMesh);
     loader.load("Collar/Business classic Collar.glb", (gltf) => {
       CollarMesh = gltf.scene; // Store the new mesh
@@ -346,7 +361,6 @@ function CollarChange(CollarDesign) {
       scene.add(CollarMesh); // Add the new mesh to the scene
     });
   } else if (CollarDesign == "Button down classic Collar") {
-    alert(CollarDesign);
     scene.remove(CollarMesh);
     loader.load("Collar/Button down classic Collar.glb", (gltf) => {
       CollarMesh = gltf.scene; // Store the new mesh
@@ -354,7 +368,6 @@ function CollarChange(CollarDesign) {
       scene.add(CollarMesh); // Add the new mesh to the scene
     });
   } else if (CollarDesign == "Button Down modern Collar") {
-    alert(CollarDesign);
     scene.remove(CollarMesh);
     loader.load("Collar/Button Down modern Collar.glb", (gltf) => {
       CollarMesh = gltf.scene; // Store the new mesh
@@ -362,7 +375,6 @@ function CollarChange(CollarDesign) {
       scene.add(CollarMesh); // Add the new mesh to the scene
     });
   } else if (CollarDesign == "Cut away classic Collar") {
-    alert(CollarDesign);
     scene.remove(CollarMesh);
     loader.load("Collar/Cut away classic Collar.glb", (gltf) => {
       CollarMesh = gltf.scene; // Store the new mesh
@@ -455,8 +467,12 @@ function ChangePocket(PocketDesing) {
 function ChangeBackDetails(backDesign) {
   if (backDesign == "null") {
     scene.remove(BackDetailsMesh);
+    loader.load("BackDetails/No back details Back.glb", (gltf) => {
+      BackDetailsMesh = gltf.scene; // Store the new mesh
+      BackDetailsMesh.position.set(0, 1.05, -1);
+      scene.add(BackDetailsMesh); // Add the new mesh to the scene
+    });
   } else if (backDesign == "Back waist darts Back") {
-    alert(backDesign);
     scene.remove(BackDetailsMesh);
     loader.load("BackDetails/Back waist darts Back.glb", (gltf) => {
       BackDetailsMesh = gltf.scene; // Store the new mesh
@@ -496,6 +512,7 @@ function ChangeBottomCut(bottomcutDesign) {
 }
 
 document.getElementById("Black").addEventListener("click", () => {
+  alert("ok");
   // Add Texture
   const textureLoader = new THREE.TextureLoader();
   const texture = textureLoader.load("./components/Texture/black.jpg"); // Load your texture
