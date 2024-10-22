@@ -23,6 +23,13 @@ function next3Page() {
 function next4Page() {
   window.location = "collarTypes.html";
 }
+function next5Page() {
+  window.location = "shirtFittedType.html";
+}
+
+function chieckoutPage() {
+  window.location = "shirtFittedType.html";
+}
 
 function chooseBodyShape(shape) {
   document.getElementById("Triangle").classList.remove("active");
@@ -56,6 +63,15 @@ function chooseCollarSize(shape) {
   document.getElementById("18s").classList.remove("active");
   document.getElementById("18/2s").classList.remove("active");
 
+  document.getElementById(shape).classList.toggle("active");
+}
+
+
+function chooseShirtType(shape) {
+  document.getElementById("fitted").classList.remove("active");
+  document.getElementById("relax").classList.remove("active");
+  document.getElementById("tight").classList.remove("active");
+  document.getElementById("VeryRelaxed").classList.remove("active");
 
   document.getElementById(shape).classList.toggle("active");
 }
