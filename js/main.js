@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 
 // Tshirt Variable
 var CollarDesign = "null";
@@ -112,7 +112,9 @@ const loader = new GLTFLoader().setPath("components/");
 
 // Initialize the DRACOLoader
 const dracoLoader = new DRACOLoader();
-dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.7/'); // Provide the correct path to the Draco decoder
+dracoLoader.setDecoderPath(
+  "https://www.gstatic.com/draco/versioned/decoders/1.5.7/"
+); // Provide the correct path to the Draco decoder
 
 // Attach the DRACOLoader to the GLTFLoader
 loader.setDRACOLoader(dracoLoader);
@@ -146,6 +148,7 @@ if (backShoulder == "null") {
     mesh.position.set(0, 1.05, -1);
     scene.add(mesh);
     BackDetailsMesh = mesh;
+    backShoulder = "No back details Back";
   });
 }
 
@@ -317,7 +320,7 @@ document.getElementById("CenterfoldsBack").addEventListener("click", () => {
 });
 document.getElementById("NobackdetailsBack").addEventListener("click", () => {
   backShoulder = "No back details Back";
-  ChangeBackDetails("null");
+  ChangeBackDetails("No back details Back");
 });
 // Bottom Cut
 document.getElementById("ClassicBottomCut").addEventListener("click", () => {
@@ -411,6 +414,7 @@ function ChangeCuff(cuffDesign) {
       CuffMesh = gltf.scene; // Store the new mesh
       CuffMesh.position.set(0, 1.05, -1);
       scene.add(CuffMesh); // Add the new mesh to the scene
+      backShoulder = "No back details Back";
     });
   }
 }
@@ -473,7 +477,7 @@ function ChangePocket(PocketDesing) {
 
 // Change Back Details
 function ChangeBackDetails(backDesign) {
-  if (backDesign == "null") {
+  if (backDesign == "No back details Back") {
     scene.remove(BackDetailsMesh);
     loader.load("BackDetails/No back details Back.glb", (gltf) => {
       BackDetailsMesh = gltf.scene; // Store the new mesh
@@ -520,7 +524,6 @@ function ChangeBottomCut(bottomcutDesign) {
 }
 
 document.getElementById("Black").addEventListener("click", () => {
-  alert("ok");
   // Add Texture
   const textureLoader = new THREE.TextureLoader();
   const texture = textureLoader.load("./components/Texture/black.jpg"); // Load your texture
