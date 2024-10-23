@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 
 // Tshirt Variable
 var CollarDesign = "null";
@@ -108,6 +109,13 @@ const light = new THREE.HemisphereLight(0xffffff, 0x080820, 4);
 scene.add(light);
 
 const loader = new GLTFLoader().setPath("components/");
+
+// Initialize the DRACOLoader
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.7/'); // Provide the correct path to the Draco decoder
+
+// Attach the DRACOLoader to the GLTFLoader
+loader.setDRACOLoader(dracoLoader);
 
 let CurruntMesh;
 // Load Components
