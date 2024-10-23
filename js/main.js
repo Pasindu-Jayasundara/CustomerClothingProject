@@ -108,7 +108,19 @@ const groundMaterial = new THREE.MeshStandardMaterial({
 const light = new THREE.HemisphereLight(0xffffff, 0x080820, 4);
 scene.add(light);
 
-const loader = new GLTFLoader().setPath("components/");
+// add Loading manager
+const loadingManager = new THREE.LoadingManager();
+const progressbar = document.getElementById("progress-bar");
+const progressContainer = document.querySelector(".PreloaderCover");
+
+loadingManager.onProgress = function (url, itemsLoaded, itemsTotal) {
+  progressbar.value = (itemsLoaded / itemsTotal) * 100;
+};
+loadingManager.onLoad = function () {
+  progressContainer.style.display = "none";
+};
+
+const loader = new GLTFLoader(loadingManager).setPath("components/");
 
 // Initialize the DRACOLoader
 const dracoLoader = new DRACOLoader();
@@ -362,6 +374,7 @@ function loadNewMesh(modelName) {
 
 // Collar Change Function
 function CollarChange(CollarDesign) {
+  alert("Please wait");
   if (CollarDesign == "null") {
     scene.remove(CollarMesh);
   } else if (CollarDesign == "Buisness Classic Collar") {
