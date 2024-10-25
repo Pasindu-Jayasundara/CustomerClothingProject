@@ -29,5 +29,4 @@ package-lock.json
 yarn.lock
 
 # Ignore Blend Components
-components/
 BlendModel/

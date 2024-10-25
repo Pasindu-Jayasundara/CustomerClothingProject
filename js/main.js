@@ -539,7 +539,7 @@ function ChangeBottomCut(bottomcutDesign) {
 document.getElementById("Black").addEventListener("click", () => {
   // Add Texture
   const textureLoader = new THREE.TextureLoader();
-  const texture = textureLoader.load("./components/Texture/black.jpg"); // Load your texture
+  const texture = textureLoader.load("./components/Texture/black.webp"); // Load your texture
 
   CurruntMesh.traverse(function (child) {
     if (child.isMesh) {
@@ -596,7 +596,7 @@ document.getElementById("Black").addEventListener("click", () => {
 document.getElementById("brown").addEventListener("click", () => {
   // Add Texture
   const textureLoader = new THREE.TextureLoader();
-  const texture = textureLoader.load("./components/Texture/brown.jpg"); // Load your texture
+  const texture = textureLoader.load("./components/Texture/brown.webp"); // Load your texture
 
   CurruntMesh.traverse(function (child) {
     if (child.isMesh) {
@@ -654,7 +654,7 @@ document.getElementById("brown").addEventListener("click", () => {
 document.getElementById("cream").addEventListener("click", () => {
   // Add Texture
   const textureLoader = new THREE.TextureLoader();
-  const texture = textureLoader.load("./components/Texture/cream.jpg"); // Load your texture
+  const texture = textureLoader.load("./components/Texture/cream.webp"); // Load your texture
 
   CurruntMesh.traverse(function (child) {
     if (child.isMesh) {
@@ -711,7 +711,7 @@ document.getElementById("cream").addEventListener("click", () => {
 document.getElementById("gray").addEventListener("click", () => {
   // Add Texture
   const textureLoader = new THREE.TextureLoader();
-  const texture = textureLoader.load("./components/Texture/gray.jpg"); // Load your texture
+  const texture = textureLoader.load("./components/Texture/gray.webp"); // Load your texture
 
   CurruntMesh.traverse(function (child) {
     if (child.isMesh) {
@@ -768,7 +768,7 @@ document.getElementById("gray").addEventListener("click", () => {
 document.getElementById("navy").addEventListener("click", () => {
   // Add Texture
   const textureLoader = new THREE.TextureLoader();
-  const texture = textureLoader.load("./components/Texture/navy blue.jpg"); // Load your texture
+  const texture = textureLoader.load("./components/Texture/navy blue.webp"); // Load your texture
 
   CurruntMesh.traverse(function (child) {
     if (child.isMesh) {
@@ -825,7 +825,7 @@ document.getElementById("navy").addEventListener("click", () => {
 document.getElementById("red").addEventListener("click", () => {
   // Add Texture
   const textureLoader = new THREE.TextureLoader();
-  const texture = textureLoader.load("./components/Texture/red.jpg"); // Load your texture
+  const texture = textureLoader.load("./components/Texture/red.webp"); // Load your texture
 
   CurruntMesh.traverse(function (child) {
     if (child.isMesh) {
@@ -882,7 +882,7 @@ document.getElementById("red").addEventListener("click", () => {
 document.getElementById("yellow").addEventListener("click", () => {
   // Add Texture
   const textureLoader = new THREE.TextureLoader();
-  const texture = textureLoader.load("./components/Texture/yellow.jpg"); // Load your texture
+  const texture = textureLoader.load("./components/Texture/yellow.webp"); // Load your texture
 
   CurruntMesh.traverse(function (child) {
     if (child.isMesh) {
