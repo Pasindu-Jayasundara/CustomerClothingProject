@@ -214,7 +214,7 @@
         <!-- Cuff -->
         <div class="row bg-white d-flex justify-content-center align-items-center p-2 mb-3"
           style="width: 80%; cursor: pointer;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeftCuff"
-          aria-controls="offcanvasLeftCuff" onclick="CuffopenNav();" id="CuffEnter"> 
+          aria-controls="offcanvasLeftCuff" onclick="CuffopenNav();" id="CuffEnter">
           <div class="btn-1 img-3"></div>
         </div>
 
@@ -339,7 +339,7 @@
         <!-- Collar -->
         <div class="row">
           <div class="position-absolute ms-4 my-3 vh-75 col-3 p-0" style="background-color: #ffffff; display: none;"
-            id="Collar" class="offcanvasType" >
+            id="Collar" class="offcanvasType">
 
             <nav class="navbar navbar-expand-lg" style="background-color: #c7c7c7">
               <div class="container-fluid">
@@ -378,7 +378,7 @@
         <!-- Cuff -->
         <div class="row">
           <div class="position-absolute ms-4 my-3 vh-75 col-3 p-0" style="background-color: #ffffff; display: none;"
-          id="Cuff" class="offcanvasType">
+            id="Cuff" class="offcanvasType">
 
             <nav class="navbar navbar-expand-lg" style="background-color: #c7c7c7">
               <div class="container-fluid">
@@ -405,13 +405,13 @@
         <!-- Placket -->
         <div class="row">
           <div class="position-absolute ms-4 my-3 vh-75 col-5 p-0" style="background-color: #ffffff; display: none;"
-          id="Placket" class="offcanvasType">
+            id="Placket" class="offcanvasType">
 
-          <nav class="navbar navbar-expand-lg" style="background-color: #c7c7c7">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Customize Placket</a>
-            </div>
-          </nav>
+            <nav class="navbar navbar-expand-lg" style="background-color: #c7c7c7">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Customize Placket</a>
+              </div>
+            </nav>
 
             <div class="row">
 
@@ -440,7 +440,7 @@
         <!-- Pocket -->
         <div class="row">
           <div class="position-absolute ms-4 my-3 vh-75 col-3 p-0" style="background-color: #ffffff; display: none;"
-          id="PocketNav" class="offcanvasType">
+            id="PocketNav" class="offcanvasType">
 
             <nav class="navbar navbar-expand-lg" style="background-color: #c7c7c7">
               <div class="container-fluid">
@@ -467,7 +467,7 @@
         <!-- BackShoilder -->
         <div class="row">
           <div class="position-absolute ms-4 my-3 vh-75 col-3 p-0" style="background-color: #ffffff; display: none;"
-          id="BackShoulder" class="offcanvasType">
+            id="BackShoulder" class="offcanvasType">
 
             <nav class="navbar navbar-expand-lg" style="background-color: #c7c7c7">
               <div class="container-fluid">
@@ -498,7 +498,7 @@
         <!-- Bottom Cut -->
         <div class="row">
           <div class="position-absolute ms-4 my-3 vh-75 col-3 p-0" style="background-color: #ffffff; display: none;"
-          id="BottomCutNav" class="offcanvasType">
+            id="BottomCutNav" class="offcanvasType">
 
             <nav class="navbar navbar-expand-lg" style="background-color: #c7c7c7">
               <div class="container-fluid">
@@ -522,7 +522,8 @@
           </div>
         </div>
 
-        <button class="btn btn-primary mybutton position-absolute bottom-25 right-0" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+        <button class="btn btn-primary mybutton position-absolute bottom-25 right-0" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
           Purchace
         </button>
 
@@ -533,91 +534,311 @@
     </div>
   </div>
 
-    <!-- Pruchase Acordient -->
-    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel">Customize Your Shirt</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-
-        <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-          <div class="progress-bar bg-success" style="width: 25%"></div>
-        </div>
-        <div class="fw-bold text-center text-secondary my-4">Answer a few questions and have your measurements ready
-          in no time.</div>
-
-        <div id="carouselExampleCaptions" class="carousel slide">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              
-              <!-- Age input -->
-              <div class="col-12 mt-5">
-                <div class="row">
-                  <div class="col-6 mb-3 text-start">
-                    <span class="text-black">Age:</span>
-                  </div>
-                  <div class="col-6 mb-3 text-end">
-                    <span id="ageOutput">50</span>
-                  </div>
-                  <div class="col-12">
-                    <input type="range" class="form-range" id="ageRange" onchange="changeRangeAge()" />
-                  </div>
-                </div>
-              </div>
-
-              <!-- weight -->
-              <div class="col-12 mt-3">
-                <div class="row">
-                  <div class="col-6 mb-3 text-start">
-                    <span class="text-black">Weight</span>
-                  </div>
-                  <div class="col-6 mb-3 text-end">
-                    <span id="WeightOutput">226 lbs</span>
-                  </div>
-                  <div class="col-12">
-                    <input min="121" max="331" type="range" class="form-range" id="WeightRange"
-                      onchange="changeRangeWeight()" />
-                  </div>
-                </div>
-              </div>
-
-              <!-- height -->
-              <div class="col-12 mt-3 mb-5">
-                <div class="row">
-                  <div class="col-6 mb-3 text-start">
-                    <span class="text-black">Height</span>
-                  </div>
-                  <div class="col-6 mb-2 text-end">
-                    <span id="HeightOutput">226 cm</span>
-                  </div>
-                  <div class="col-12">
-                    <input name="height" min="100" max="250" step="1" value="175" type="range" class="form-range"
-                      id="heightRange" onchange="changeRangeheight()" />
-                  </div>
-                </div>
-              </div>
-              
-            </div>
-            <div class="carousel-item">
-                <h5>Second slide label</h5>
-                <p>Some representative placeholder content for the second slide.</p>
-            </div>
-            <div class="carousel-item">
-              <h5>Second slide label</h5>
-              <p>Some representative placeholder content for the second slide.</p>
-          </div>
-          </div>
-        </div>
-
-        <div class="row d-flex justify-content-around align-items-center mt-5 pt-5">
-          <div class="col-4 btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev"><i class="bi bi-caret-left-fill"></i> Previous</div>
-          <div class="col-4 btn btn-success" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">Next <i class="bi bi-caret-right-fill"></i></div>
-        </div>
-
-      
-      </div>
+  <!-- Pruchase Acordient -->
+  <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="offcanvasRight"
+    aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">Customize Your Shirt</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
+    <div class="offcanvas-body">
+
+      <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0"
+        aria-valuemax="100">
+        <div class="progress-bar bg-success" style="width: 25%"></div>
+      </div>
+      <div class="fw-bold text-center text-secondary my-4">Answer a few questions and have your measurements ready
+        in no time.</div>
+
+      <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-inner">
+
+          <!-- pg 1 -->
+          <div class="carousel-item active">
+
+            <!-- Age input -->
+            <div class="col-12 mt-5">
+              <div class="row">
+                <div class="col-6 mb-3 text-start">
+                  <span class="text-black">Age:</span>
+                </div>
+                <div class="col-6 mb-3 text-end">
+                  <span id="ageOutput">50</span>
+                </div>
+                <div class="col-12">
+                  <input type="range" class="form-range" id="ageRange" onchange="changeRangeAge()" />
+                </div>
+              </div>
+            </div>
+
+            <!-- weight -->
+            <div class="col-12 mt-3">
+              <div class="row">
+                <div class="col-6 mb-3 text-start">
+                  <span class="text-black">Weight</span>
+                </div>
+                <div class="col-6 mb-3 text-end">
+                  <span id="WeightOutput">226 lbs</span>
+                </div>
+                <div class="col-12">
+                  <input min="121" max="331" type="range" class="form-range" id="WeightRange"
+                    onchange="changeRangeWeight()" />
+                </div>
+              </div>
+            </div>
+
+            <!-- height -->
+            <div class="col-12 mt-3 mb-5">
+              <div class="row">
+                <div class="col-6 mb-3 text-start">
+                  <span class="text-black">Height</span>
+                </div>
+                <div class="col-6 mb-2 text-end">
+                  <span id="HeightOutput">226 cm</span>
+                </div>
+                <div class="col-12">
+                  <input name="height" min="100" max="250" step="1" value="175" type="range" class="form-range"
+                    id="heightRange" onchange="changeRangeheight()" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row d-flex justify-content-around align-items-center mt-5 pt-5">
+              <div class="col-4 btn btn-secondary" style="visibility: hidden;" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev"><i class="bi bi-caret-left-fill"></i> Previous</div>
+              <div class="col-4 btn btn-success" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">Next <i
+                  class="bi bi-caret-right-fill"></i></div>
+            </div>
+          </div>
+
+          <!-- pg 2 -->
+          <div class="carousel-item">
+
+            <div class="col-12 mb-3 text-center">
+              <span class="text-black">Body Shape</span>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap gap-5 justify-content-center align-items-center">
+
+              <div class="col-3 d-flex flex-column">
+                <img src="NewShirtModel/BodyShapes/triangle.jpg" class="ShapeBodyImages" style="width: 80px;" />
+                <button class="btn btn-outline-dark shpaeButton mt-1" onclick="chooseBodyShape('Triangle');"
+                  id="Triangle">
+                  Triangle
+                </button>
+              </div>
+
+              <div class="col-3 d-flex flex-column">
+                <img src="NewShirtModel/BodyShapes/rectangle.jpg" class="ShapeBodyImages" style="width: 80px;" />
+                <button class="btn btn-outline-dark shpaeButton mt-1" onclick="chooseBodyShape('rectangle');"
+                  id="rectangle">
+                  rectangle
+                </button>
+              </div>
+
+              <div class="col-3 d-flex flex-column">
+                <img src="NewShirtModel/BodyShapes/inverted-triangle.jpg" class="ShapeBodyImages"
+                  style="width: 80px;" />
+                <button class="btn btn-outline-dark shpaeButton mt-1" onclick="chooseBodyShape('inverted');"
+                  id="inverted">
+                  inverted
+                </button>
+              </div>
+
+              <div class="col-3 d-flex flex-column">
+                <img src="NewShirtModel/BodyShapes/dontknow.jpg" class="ShapeBodyImages" style="width: 80px;" />
+                <button class="btn btn-outline-dark shpaeButton mt-1" onclick="chooseBodyShape('dontknow');"
+                  id="dontknow">
+                  ?
+                </button>
+              </div>
+
+              <div class="row d-flex justify-content-around align-items-center m-0 flex-row col-12">
+                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <i class="bi bi-caret-left-fill"></i> Previous</div>
+                <div class="col-4 d-block btn btn-success" data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide="next">Next <i class="bi bi-caret-right-fill"></i></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- pg 3 -->
+          <div class="carousel-item">
+
+            <div class="col-12 mb-3 text-center">
+              <span class="text-black">Shirt Fit Type</span>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap gap-5 justify-content-center align-items-center">
+
+              <div class="col-3 d-flex flex-column">
+                <img src="NewShirtModel/BodyShapes/ShirtTypes/shirt-fit-fitted.svg" class="ShapeBodyImages"
+                  style="width: 80px;" />
+                <button class="btn btn-outline-dark shpaeButton mt-1" onclick="chooseShirtType('fitted');" id="fitted">
+                  Fitted
+                </button>
+              </div>
+
+              <div class="col-3 d-flex flex-column">
+                <img src="NewShirtModel/BodyShapes/ShirtTypes/shirt-fit-relaxed.svg" class="ShapeBodyImages"
+                  style="width: 80px;" />
+                <button class="btn btn-outline-dark shpaeButton mt-1" onclick="chooseShirtType('relax');" id="relax">
+                  Relax
+                </button>
+              </div>
+
+              <div class="col-3 d-flex flex-column">
+                <img src="NewShirtModel/BodyShapes/ShirtTypes/shirt-fit-tight.svg" class="ShapeBodyImages"
+                  style="width: 80px;" />
+                <button class="btn btn-outline-dark shpaeButton mt-1" onclick="chooseShirtType('tight');" id="tight">
+                  Tight
+                </button>
+              </div>
+
+              <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+                <img src="NewShirtModel/BodyShapes/ShirtTypes/shirt-fit-very-relaxed.svg" class="ShapeBodyImages"
+                  style="width: 80px;" />
+                <button class="btn btn-outline-dark shpaeButton mt-1 text-nowrap"
+                  onclick="chooseShirtType('VeryRelaxed');" id="VeryRelaxed">
+                  Very Relax
+                </button>
+              </div>
+
+              <div class="row d-flex justify-content-around align-items-center m-0 flex-row col-12">
+                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <i class="bi bi-caret-left-fill"></i> Previous</div>
+                <div class="col-4 d-block btn btn-success" data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide="next">Next <i class="bi bi-caret-right-fill"></i></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- pg 4 -->
+          <div class="carousel-item">
+
+            <div class="col-12 mb-3 text-center">
+              <span class="text-black">Shoulder Type</span>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap gap-5 justify-content-center align-items-center">
+
+              <div class="col-3 d-flex flex-column">
+                <img src="NewShirtModel/BodyShapes/back/straight.jpg" class="ShapeBodyImages" style="width: 80px;" />
+                <button class="btn btn-outline-dark shpaeButton mt-1" onclick="chooseShoulderType('straight');"
+                  id="straight">
+                  Straight
+                </button>
+              </div>
+
+              <div class="col-3 d-flex flex-column">
+                <img src="NewShirtModel/BodyShapes/back/normal.jpg" class="ShapeBodyImages" style="width: 80px;" />
+                <button class="btn btn-outline-dark shpaeButton mt-1" onclick="chooseShoulderType('normal');"
+                  id="normal">
+                  Normal
+                </button>
+              </div>
+
+              <div class="col-3 d-flex flex-column">
+                <img src="NewShirtModel/BodyShapes/back/sloping.jpg" class="ShapeBodyImages" style="width: 80px;" />
+                <button class="btn btn-outline-dark shpaeButton mt-1" onclick="chooseShoulderType('sloping');"
+                  id="sloping">
+                  Sloping
+                </button>
+              </div>
+
+              <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+                <img src="NewShirtModel/BodyShapes/back/dontknow.jpg" class="ShapeBodyImages" style="width: 80px;" />
+                <button class="btn btn-outline-dark shpaeButton mt-1 text-nowrap col-12 d-block"
+                  onclick="chooseShoulderType('dontknow');" id="dontknow">
+                  ?
+                </button>
+              </div>
+
+              <div class="row d-flex justify-content-around align-items-center m-0 flex-row col-12">
+                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <i class="bi bi-caret-left-fill"></i> Previous</div>
+                <div class="col-4 d-block btn btn-success" data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide="next">Next <i class="bi bi-caret-right-fill"></i></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- pg 5 -->
+          <div class="carousel-item">
+
+            <div class="col-12 mb-3 text-center mt-4">
+              <span class="text-black">Collar Type</span>
+            </div>
+
+            <div class="d-flex flex-row flex-wrap gap-2 justify-content-center align-items-center my-4">
+
+              <button class="btn btn-outline-dark shpaeButton" onclick="chooseCollarSize('13s');" id="13s">
+                13
+              </button>
+
+              <button class="btn btn-outline-dark shpaeButton" onclick="chooseCollarSize('13/2s');" id="13/2s">
+                13/2
+              </button>
+
+              <button class="btn btn-outline-dark shpaeButton" onclick="chooseCollarSize('14s');" id="14s">
+                14
+              </button>
+
+              <button class="btn btn-outline-dark shpaeButton" onclick="chooseCollarSize('14/2s');" id="14/2s">
+                14/2
+              </button>
+
+              <button class="btn btn-outline-dark shpaeButton" onclick="chooseCollarSize('15s');" id="15s">
+                15
+              </button>
+
+              <button class="btn btn-outline-dark shpaeButton" onclick="chooseCollarSize('15/2s');" id="15/2s">
+                15/2
+              </button>
+
+              <button class="btn btn-outline-dark shpaeButton" onclick="chooseCollarSize('16s');" id="16s">
+                16
+              </button>
+
+              <button class="btn btn-outline-dark shpaeButton" onclick="chooseCollarSize('16/2s');" id="16/2s">
+                16/2
+              </button>
+
+              <button class="btn btn-outline-dark shpaeButton" onclick="chooseCollarSize('17s');" id="17s">
+                17
+              </button>
+
+              <button class="btn btn-outline-dark shpaeButton" onclick="chooseCollarSize('17/2s');" id="17/2s">
+                17/2
+              </button>
+
+              <button class="btn btn-outline-dark shpaeButton" onclick="chooseCollarSize('18s');" id="18s">
+                18
+              </button>
+
+              <button class="btn btn-outline-dark shpaeButton" onclick="chooseCollarSize('18/2s');" id="18/2s">
+                18/2
+              </button>
+
+              <div class="row d-flex justify-content-around align-items-center mt-5 flex-row col-12">
+                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <i class="bi bi-caret-left-fill"></i> Previous</div>
+                <div class="col-4 d-block btn btn-success" onclick="window.location.href='chekcout.html'"> Checkout <i class="bi bi-wallet"></i></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
 
   <script type="module" src="js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -637,33 +858,33 @@
       }
     }
     function PlacketopenNav() {
-      if(document.getElementById("Placket").style.display == "block")
+      if (document.getElementById("Placket").style.display == "block")
         document.getElementById("Placket").style.display = "none";
-      else{
+      else {
         setAllClose();
         document.getElementById("Placket").style.display = "block";
       }
     }
     function PocketopenNav() {
-      if(document.getElementById("PocketNav").style.display == "block")
+      if (document.getElementById("PocketNav").style.display == "block")
         document.getElementById("PocketNav").style.display = "none";
-      else{
+      else {
         setAllClose();
         document.getElementById("PocketNav").style.display = "block";
       }
     }
     function BackShoulderopenNav() {
-      if(document.getElementById("BackShoulder").style.display == "block")
+      if (document.getElementById("BackShoulder").style.display == "block")
         document.getElementById("BackShoulder").style.display = "none";
-      else{
+      else {
         setAllClose();
         document.getElementById("BackShoulder").style.display = "block";
       }
     }
     function BottomCutopenNav() {
-      if(document.getElementById("BottomCutNav").style.display == "block")
+      if (document.getElementById("BottomCutNav").style.display == "block")
         document.getElementById("BottomCutNav").style.display = "none";
-      else{
+      else {
         setAllClose();
         document.getElementById("BottomCutNav").style.display = "block";
       }
@@ -678,34 +899,34 @@
       }
     }
     function CuffopenNav() {
-      if(document.getElementById("Cuff").style.display == "block"){
+      if (document.getElementById("Cuff").style.display == "block") {
         document.getElementById("Cuff").style.display = "none";
-      }else{
+      } else {
         setAllClose();
         document.getElementById("Cuff").style.display = "block";
       }
     }
 
-    function setAllClose(){
-      if(document.getElementById("Collar").style.display == "block"){
+    function setAllClose() {
+      if (document.getElementById("Collar").style.display == "block") {
         document.getElementById("Collar").style.display = "none";
       }
-      if(document.getElementById("Placket").style.display == "block"){
+      if (document.getElementById("Placket").style.display == "block") {
         document.getElementById("Placket").style.display = "none";
       }
-      if(document.getElementById("PocketNav").style.display == "block"){
+      if (document.getElementById("PocketNav").style.display == "block") {
         document.getElementById("PocketNav").style.display = "none";
       }
-      if(document.getElementById("BackShoulder").style.display == "block"){
+      if (document.getElementById("BackShoulder").style.display == "block") {
         document.getElementById("BackShoulder").style.display = "none";
       }
-      if(document.getElementById("BottomCutNav").style.display == "block"){
+      if (document.getElementById("BottomCutNav").style.display == "block") {
         document.getElementById("BottomCutNav").style.display = "none";
       }
-      if(document.getElementById("FabricNav").style.display == "block"){
+      if (document.getElementById("FabricNav").style.display == "block") {
         document.getElementById("FabricNav").style.display = "none";
       }
-      if(document.getElementById("Cuff").style.display == "block"){
+      if (document.getElementById("Cuff").style.display == "block") {
         document.getElementById("Cuff").style.display = "none";
       }
     }
