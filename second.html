@@ -213,7 +213,8 @@
 
         <!-- Cuff -->
         <div class="row bg-white d-flex justify-content-center align-items-center p-2 mb-3"
-          style="width: 80%; cursor: pointer;">
+          style="width: 80%; cursor: pointer;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeftCuff"
+          aria-controls="offcanvasLeftCuff" onclick="CuffopenNav();" id="CuffEnter"> 
           <div class="btn-1 img-3"></div>
         </div>
 
@@ -370,6 +371,33 @@
           </div>
         </div>
 
+        <!-- Cuff -->
+        <div class="row">
+          <div class="position-absolute ms-4 my-3 vh-75 col-3 p-0" style="background-color: #ffffff; display: none;"
+          id="Cuff" class="offcanvasType">
+
+            <nav class="navbar navbar-expand-lg" style="background-color: #c7c7c7">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Customize Cuff Type</a>
+              </div>
+            </nav>
+
+            <div class="row">
+
+              <div class="col-12 my-3 ms-3" style="cursor: pointer">
+                <img src="NewShirtModel/Cuff/icons/SingleButtonCUff.svg" style="width: 40px; " alt="" />
+                <span class="fw-bold text-black" id="SingleButtonCuff">Single Button Cuff</span>
+              </div>
+              <div class="col-12 my-3 ms-3" style="cursor: pointer">
+                <img src="NewShirtModel/Cuff/icons/DoubleButtonCuff.svg" style="width: 40px" alt="" />
+                <span class="fw-bold text-black" id="DoubleButtonCuff">Double Button Cuff</span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
         <div class="row">
           <div class="col-12 bg-black" id="ViewModel"></div>
         </div>
@@ -414,7 +442,11 @@
       }
     }
     function CuffopenNav() {
-      document.getElementById("Cuff").style.width = "300px";
+      if(document.getElementById("Cuff").style.display == "block"){
+        document.getElementById("Cuff").style.display = "none";
+      }else{
+        document.getElementById("Cuff").style.display = "block";
+      }
     }
 
   </script>
