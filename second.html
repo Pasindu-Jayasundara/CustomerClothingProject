@@ -220,7 +220,8 @@
 
         <!-- Placket -->
         <div class="row bg-white d-flex justify-content-center align-items-center p-2 mb-3"
-          style="width: 80%; cursor: pointer;">
+          style="width: 80%; cursor: pointer;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeftPlacket"
+          aria-controls="offcanvasLeftPlacket" id="Packet" onclick="PlacketopenNav();">
           <div class="btn-1 img-4"></div>
         </div>
 
@@ -398,6 +399,41 @@
           </div>
         </div>
 
+        <!-- Placket -->
+        <div class="row">
+          <div class="position-absolute ms-4 my-3 vh-75 col-5 p-0" style="background-color: #ffffff; display: none;"
+          id="Placket" class="offcanvasType">
+
+          <nav class="navbar navbar-expand-lg" style="background-color: #c7c7c7">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Customize Placket</a>
+            </div>
+          </nav>
+
+            <div class="row">
+
+              <div class="col-5 my-4 ms-3" style="cursor: pointer">
+                <img src="NewShirtModel/Placket/icons/Button.svg" style="width: 40px" alt="" />
+                <span class="fw-bold text-black" id="Button">Button</span>
+              </div>
+              <div class="col-5 my-4 ms-3" style="cursor: pointer">
+                <img src="NewShirtModel/Placket/icons/TuxedoPlacket.svg" style="width: 40px" alt="" />
+                <span class="fw-bold text-black" id="Tuxedoplacket">Tuxedo placket</span>
+              </div>
+              <div class="col-5 my-4 ms-3" style="cursor: pointer">
+                <img src="NewShirtModel/Placket/icons/withoutPlacket.svg" style="width: 40px" alt="" />
+                <span class="fw-bold text-black" id="Withoutplacket">Without placket</span>
+              </div>
+              <div class="col-5 my-4 ms-3" style="cursor: pointer">
+                <img src="NewShirtModel/Placket/icons/WithPlacket.svg" style="width: 40px" alt="" />
+                <span class="fw-bold text-black" id="Withplacket">With placket</span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
         <div class="row">
           <div class="col-12 bg-black" id="ViewModel"></div>
         </div>
@@ -422,7 +458,11 @@
       }
     }
     function PlacketopenNav() {
-      document.getElementById("Placket").style.width = "300px";
+      if(document.getElementById("Placket").style.display == "block")
+        document.getElementById("Placket").style.display = "none";
+      else{
+        document.getElementById("Placket").style.display = "block";
+      }
     }
     function PocketopenNav() {
       document.getElementById("PocketNav").style.width = "300px";
