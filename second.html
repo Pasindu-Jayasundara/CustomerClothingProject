@@ -545,7 +545,7 @@
 
       <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0"
         aria-valuemax="100">
-        <div class="progress-bar bg-success" style="width: 25%"></div>
+        <div class="progress-bar bg-success" style="width: 25%" id="progressbar"></div>
       </div>
       <div class="fw-bold text-center text-secondary my-4">Answer a few questions and have your measurements ready
         in no time.</div>
@@ -606,7 +606,7 @@
             <div class="row d-flex justify-content-around align-items-center mt-5 pt-5">
               <div class="col-4 btn btn-secondary" style="visibility: hidden;" data-bs-target="#carouselExampleCaptions"
                 data-bs-slide="prev"><i class="bi bi-caret-left-fill"></i> Previous</div>
-              <div class="col-4 btn btn-success" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">Next <i
+              <div class="col-4 btn btn-success" data-bs-target="#carouselExampleCaptions" data-bs-slide="next" onclick="progressbar(2)">Next <i
                   class="bi bi-caret-right-fill"></i></div>
             </div>
           </div>
@@ -654,10 +654,10 @@
               </div>
 
               <div class="row d-flex justify-content-around align-items-center m-0 flex-row col-12">
-                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" onclick="progressbar(1)">
                   <i class="bi bi-caret-left-fill"></i> Previous</div>
                 <div class="col-4 d-block btn btn-success" data-bs-target="#carouselExampleCaptions"
-                  data-bs-slide="next">Next <i class="bi bi-caret-right-fill"></i></div>
+                  data-bs-slide="next" onclick="progressbar(3)">Next <i class="bi bi-caret-right-fill"></i></div>
               </div>
             </div>
           </div>
@@ -705,10 +705,10 @@
               </div>
 
               <div class="row d-flex justify-content-around align-items-center m-0 flex-row col-12">
-                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" onclick="progressbar(2)">
                   <i class="bi bi-caret-left-fill"></i> Previous</div>
                 <div class="col-4 d-block btn btn-success" data-bs-target="#carouselExampleCaptions"
-                  data-bs-slide="next">Next <i class="bi bi-caret-right-fill"></i></div>
+                  data-bs-slide="next" onclick="progressbar(4)">Next <i class="bi bi-caret-right-fill"></i></div>
               </div>
             </div>
 
@@ -756,10 +756,10 @@
               </div>
 
               <div class="row d-flex justify-content-around align-items-center m-0 flex-row col-12">
-                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" onclick="progressbar(3)">
                   <i class="bi bi-caret-left-fill"></i> Previous</div>
                 <div class="col-4 d-block btn btn-success" data-bs-target="#carouselExampleCaptions"
-                  data-bs-slide="next">Next <i class="bi bi-caret-right-fill"></i></div>
+                  data-bs-slide="next" onclick="progressbar(5)">Next <i class="bi bi-caret-right-fill"></i></div>
               </div>
             </div>
 
@@ -823,7 +823,7 @@
               </button>
 
               <div class="row d-flex justify-content-around align-items-center mt-5 flex-row col-12">
-                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" onclick="progressbar(4)">
                   <i class="bi bi-caret-left-fill"></i> Previous</div>
                 <div class="col-4 d-block btn btn-success" onclick="window.location.href='chekcout.html'"> Checkout <i class="bi bi-wallet"></i></div>
               </div>
@@ -848,6 +848,11 @@
   <script src="js/details.js"></script>
 
   <script>
+
+    function progressbar(precent){
+      document.getElementById("progressbar").style.width = precent*20 + "%";
+    }
+
     /* Open the sidebar */
     function CollaropenNav() {
       if (document.getElementById("Collar").style.display == "block")
