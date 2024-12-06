@@ -14,8 +14,8 @@ var BottomCut = "null";
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 
-var TagHeght = window.innerHeight - 80;
-var TagWidth = window.innerWidth - 300;
+var TagHeght = window.innerHeight;
+var TagWidth = window.innerWidth - 155;
 var ViewModelTag = document.getElementById("ViewModel");
 console.log(ViewModelTag.inner);
 

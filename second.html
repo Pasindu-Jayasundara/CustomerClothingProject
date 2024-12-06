@@ -125,8 +125,48 @@
       align-items: center;
       flex-direction: column;
     }
-  </style>
 
+    ::-webkit-scrollbar {
+      width: 0;
+    }
+
+    .btn-1 {
+      width: 90px;
+      height: 90px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    .img-1 {
+      background-image: url('NewShirtModel/Fabric/fabrik.png');
+    }
+
+    .img-2 {
+      background-image: url('NewShirtModel/Collar/collarIcons/mainCategory.svg');
+    }
+
+    .img-3 {
+      background-image: url('NewShirtModel/Cuff/icons/main.svg');
+    }
+
+    .img-4 {
+      background-image: url('NewShirtModel/Placket/icons/main.svg');
+    }
+
+    .img-5 {
+      background-image: url('NewShirtModel/Pocket/icons/MainImage.svg');
+    }
+
+    .img-6 {
+      background-image: url('NewShirtModel/BackDetails/icons/MainImage.svg');
+    }
+
+    .img-7 {
+      background-image: url('NewShirtModel/BottomCut/icons/classicBottomCut.svg');
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
   <script type="importmap">
       {
@@ -138,706 +178,117 @@
     </script>
 </head>
 
-<body style="background-color: rgb(92, 91, 91)">
+<body>
   <!-- Preloader -->
-  <div class="PreloaderCover">
+  <!-- <div class="PreloaderCover">
     <h3 class="fw-bold text-white">Loading...</h3>
     <progress id="progress-bar" class="bg-success" value="0" max="100"></progress>
-  </div>
+  </div> -->
+
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-12">
+    <div class="row d-flex position-relative">
+
+      <div class="d-flex bg-white justify-content-center align-items-center position-absolute top-0 col-1"
+        style="opacity: 0.75;">
+        <i class="bi bi-caret-up-fill fs-2"></i>
+      </div>
+
+      <div
+        class="col-1 vh-100 overflow-y-scroll p-0 overflow-x-hidden d-flex flex-column justify-content-start align-items-center"
+        style="background-color: #1b1a1ad1;">
+
+        <div class="row bg-white d-flex justify-content-center align-items-center p-2 my-3">
+          <div class="btn-1 img-1"></div>
+        </div>
+
+        <div class="row bg-white d-flex justify-content-center align-items-center p-2 mb-3"
+          style="width: 80%; cursor: pointer;">
+          <div class="btn-1 img-2"></div>
+        </div>
+
+        <div class="row bg-white d-flex justify-content-center align-items-center p-2 mb-3"
+          style="width: 80%; cursor: pointer;">
+          <div class="btn-1 img-3"></div>
+        </div>
+
+        <div class="row bg-white d-flex justify-content-center align-items-center p-2 mb-3"
+          style="width: 80%; cursor: pointer;">
+          <div class="btn-1 img-4"></div>
+        </div>
+
+        <div class="row bg-white d-flex justify-content-center align-items-center p-2 mb-3"
+          style="width: 80%; cursor: pointer;">
+          <div class="btn-1 img-5"></div>
+        </div>
+
+        <div class="row bg-white d-flex justify-content-center align-items-center p-2 mb-3"
+          style="width: 80%; cursor: pointer;">
+          <div class="btn-1 img-6"></div>
+        </div>
+
+        <div class="row bg-white d-flex justify-content-center align-items-center p-2 mb-3"
+          style="width: 80%; cursor: pointer;">
+          <div class="btn-1 img-7"></div>
+        </div>
+
+      </div>
+
+      <div class="d-flex bg-white justify-content-center align-items-center position-absolute bottom-0 col-1"
+        style="opacity: 0.75;">
+        <i class="bi bi-caret-down-fill fs-2"></i>
+      </div>
+
+      <div class="col-11 vh-100 position-relative">
+
+        <!-- fabric -->
         <div class="row">
-          <div class="col-12 text-center">
-            <h1 style="font-family: fantasy; color: white">
-              Clothing Project
-            </h1>
-          </div>
-          <!-- button -->
-          <button class="btn btn-primary mybutton" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-            Purchace
-          </button>
-          <!-- Varient Design -->
-          <div class="col-2  d-flex justify-content-center">
-            <div class="row">
-              <div class="col-12 d-felx justify-content-center">
-                <div class="row d-flex justify-content-center">
-                  <div class="col-12 d-flex justify-content-center">
-                    <!-- Fabric Button -->
-                    <button class="ImageButton" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeftCollar"
-                      aria-controls="offcanvasLeftCollar" onclick="FabricopenNav();">
-                      <div class="col-12">
-                        <div class="row d-flex justify-content-center">
-                          <img src="NewShirtModel/Fabric/fabric.jpg" style="width: 100px" />
-                          <span class="fw-bold text-white">Fabric</span>
-                        </div>
-                      </div>
+          <div class="position-absolute ms-1 my-3 vh-75 col-5">
+
+            <nav class="navbar navbar-expand-lg" style="background-color: #969696">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Fabric</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                  aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                  <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle fs-4" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Color Varient
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a class="dropdown-item" href="#">Common Colors</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Premium Colors</a>
+                        </li>
+                        <li>
+                          <hr class="dropdown-divider" />
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Customize Colors</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search Colors" aria-label="Search" />
+                    <button class="btn btn-outline-secondary" type="submit">
+                      Search
                     </button>
-                  </div>
-
-                  <div class="col-12 mt-3 d-flex justify-content-center">
-                    <!-- Collar Button -->
-                    <button class="ImageButton" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeftCollar"
-                      aria-controls="offcanvasLeftCollar" onclick="CollaropenNav();" id="CollarEnter">
-                      <div class="col-12">
-                        <div class="row">
-                          <img src="NewShirtModel/Collar/collarIcons/mainCategory.svg" width="80" height="80" alt="" />
-                          <span class="fw-bold">Collar</span>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-
-                  <div class="col-12 mt-3 d-flex justify-content-center">
-                    <!-- Cuff  Button -->
-                    <button class="ImageButton" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeftCuff"
-                      aria-controls="offcanvasLeftCuff" onclick="CuffopenNav();" id="CuffEnter">
-                      <div class="col-12">
-                        <div class="row">
-                          <img src="NewShirtModel/Cuff/icons/main.svg" width="80" height="80" alt="" id="CollarEnter" />
-                          <span class="fw-bold">Cufff</span>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-
-                  <div class="col-12 d-flex justify-content-center">
-                    <!-- Placket Button -->
-                    <button class="ImageButton mt-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeftPlacket"
-                      aria-controls="offcanvasLeftPlacket" id="Packet" onclick="PlacketopenNav();">
-                      <div class="col-12">
-                        <div class="row">
-                          <img src="NewShirtModel/Placket/icons/main.svg" width="70" height="70" alt="" />
-                          <span class="fw-bold">Placet</span>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-
-                  <div class="col-12 d-flex justify-content-center">
-                    <!-- Pocket  Button -->
-                    <button class="ImageButton mt-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeftPocket"
-                      aria-controls="offcanvasLeftPocket" id="Pocket" onclick="PocketopenNav();">
-                      <div class="col-12">
-                        <div class="row">
-                          <img src="NewShirtModel/Pocket/icons/MainImage.svg" width="70" height="70" alt="" />
-                          <span class="fw-bold">Pocket</span>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-
-                  <!-- BackShoilder  Button -->
-                  <button class="ImageButton mt-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeftBacksoulder"
-                    aria-controls="offcanvasLeftBacksoulder" id="backShoulder" onclick="BackShoulderopenNav();">
-                    <div class="col-12">
-                      <div class="row">
-                        <img src="NewShirtModel/BackDetails/icons/MainImage.svg" width="70" height="70" alt="" />
-                        <span class="fw-bold">Back Soulder</span>
-                      </div>
-                    </div>
-                  </button>
-
-                  <!-- Bottom Cut  Button -->
-                  <button class="ImageButton mt-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeftBottomCut"
-                    aria-controls="offcanvasLeftBottomCut" id="BottomCut" onclick="BottomCutopenNav()">
-                    <div class="col-12">
-                      <div class="row">
-                        <img src="NewShirtModel/BottomCut/icons/classicBottomCut.svg" width="70" height="70" alt="" />
-                        <span class="fw-bold">Bottom Cut</span>
-                      </div>
-                    </div>
-                  </button>
+                  </form>
                 </div>
               </div>
-            </div>
+            </nav>
+
           </div>
-
-          <div class="col-lg-10 col-12" id="ViewModel"></div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- Pruchase Acordient -->
-  <div class="col-lg-3 col-12 mt-3">
-    <div class="row mt-0">
-      <!-- Accordian type -->
-      <div class="col-12 mt-1 mb-3 text-center" style="padding-left: 30px">
         <div class="row">
-          <div class="col-12" style="margin-top: 10px"></div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel"
-              style="background-color: rgb(92, 91, 91)">
-              <div class="offcanvas-header">
-                <h5 class="offcanvas-title fw-bold text-white" id="offcanvasRightLabel">
-                  Customize Your Shirt
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div>
-              <div class="offcanvas-body">
-                <!-- offcanvace Body -->
-
-                <div class="row">
-                  <div class="col-12">
-                    <span class="fw-bold text-center">Answer a few questions and have your measurements ready
-                      in no time.</span>
-                  </div>
-                  <div class="col-12">
-                    <hr class="text-white fw-bold" />
-                  </div>
-
-                  <!-- Age input -->
-                  <div class="col-12 mt-2">
-                    <div class="row">
-                      <div class="col-6 mb-3 text-start">
-                        <span>Age</span>
-                      </div>
-                      <div class="col-6 mb-3 text-end">
-                        <span id="ageOutput">50</span>
-                      </div>
-                      <div class="col-12">
-                        <input type="range" class="form-range" id="ageRange" onchange="changeRangeAge()" />
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- weight -->
-                  <div class="col-12 mt-2">
-                    <div class="row">
-                      <div class="col-6 mb-3 text-start">
-                        <span>Weight</span>
-                      </div>
-                      <div class="col-6 mb-3 text-end">
-                        <span id="WeightOutput">226 lbs</span>
-                      </div>
-                      <div class="col-12">
-                        <input min="121" max="331" type="range" class="form-range" id="WeightRange"
-                          onchange="changeRangeWeight()" />
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- height -->
-                  <div class="col-12 mt-2">
-                    <div class="row">
-                      <div class="col-6 mb-3 text-start">
-                        <span>Weight</span>
-                      </div>
-                      <div class="col-6 mb-2 text-end">
-                        <span id="HeightOutput">226 cm</span>
-                      </div>
-                      <div class="col-12">
-                        <input name="height" min="100" max="250" step="1" value="175" type="range" class="form-range"
-                          id="heightRange" onchange="changeRangeheight()" />
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Summery Table -->
-                  <!-- <div class="col-12">
-                          <div class="row">
-                            <div class="col-12 mt-5 mb-2">
-                              <span class="fw-bold fs-4">Summery</span>
-                            </div>
-                            <table
-                              class="text-center"
-                              style="border: 1px solid white"
-                            >
-                              <tr>
-                                <th>Type</th>
-                                <th>Category</th>
-                              </tr>
-                              <tr>
-                                <td>Collar Type</td>
-                                <td id="Collar_table_id"></td>
-                              </tr>
-                              <tr>
-                                <td>Placket Type</td>
-                                <td id="placekt_table_id"></td>
-                              </tr>
-                              <tr>
-                                <td>Pcoket Type</td>
-                                <td id="pocket_table_id"></td>
-                              </tr>
-                              <tr>
-                                <td>Back Type</td>
-                                <td id="Back_Details_table_id"></td>
-                              </tr>
-                              <tr>
-                                <td>Bottom Cut</td>
-                                <td id="Bottom_cut_table_id"></td>
-                              </tr>
-                            </table>
-  
-                            <button
-                              id="testButton"
-                              class="btn btn-outline-secondary"
-                              style="width: 100%"
-                            >
-                              Summery Button
-                            </button>
-                          </div>
-                        </div> -->
-
-                  <div class="col-12 mt-4 mb-4 d-grid">
-                    <button class="btn btn-dark fw-bold" onclick="Next2Page();">
-                      Next ->
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Collar type -->
-  <div id="Collar" class="offcanvasType">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <div class="col-12">
-      <div class="row">
-        <!-- offcanvace Body -->
-        <div class="col-12 mb-5">
-          <div class="row">
-            <div class="col-12 d-flex justify-content-center mb-5">
-              <div class="row">
-                <h3 class="text-white">Customize Your Shirt</h3>
-              </div>
-            </div>
-
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-center align-item-center mt-2">
-                  <img src="NewShirtModel/Collar/collarIcons/BuisnessClassicCollar.svg" width="50px" height="50px"
-                    alt="" />
-                </div>
-                <div class="col-8 mt-3 d-flex justify-content-start">
-                  <span id="buisness Classic Collar">Buisness Classic Collar
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-center align-item-center mt-2">
-                  <img src="NewShirtModel/Collar/collarIcons/ButtonDownClassicCollar.svg" width="50px" height="50px"
-                    alt="" />
-                </div>
-                <div class="col-8 mt-3 d-flex justify-content-start">
-                  <span id="Button down classic Collar">buisness Down Classic Collar</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-center align-item-center mt-2">
-                  <img src="NewShirtModel/Collar/collarIcons/buttonDownmoderncollar.svg" width="50px" height="50px"
-                    alt="" />
-                </div>
-                <div class="col-8 mt-3 d-flex justify-content-start">
-                  <span id="ButtonDownmodernCollar">Button Down Modern Collar</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 mt-3" style="cursor: pointer">
-              <div class="col-12">
-                <div class="row">
-                  <div class="col-4 mt-2 d-flex justify-content-center align-content-center">
-                    <img src="NewShirtModel/Collar/collarIcons/CutAwayClassicCOllar.svg" width="50px" height="50px"
-                      alt="" />
-                  </div>
-                  <div class="col-8 mt-3 d-flex justify-content-start align-content-center">
-                    <span id="CutawayclassicCollar">Cut Away Classic Collar</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-center align-item-center mt-2">
-                  <img src="NewShirtModel/Collar/collarIcons/MOACollar.svg" width="50px" height="50px" alt="" />
-                </div>
-                <div class="col-8 mt-3 d-flex justify-content-start">
-                  <span id="MOACollar">MOA Collar</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Cuff type -->
-  <div id="Cuff" class="offcanvasType">
-    <a href="javascript:void(0)" class="closebtn" id="CuffOut" onclick="closeNav()">&times;</a>
-    <div class="col-12">
-      <div class="row">
-        <!-- offcanvace Body -->
-        <div class="col-12 mb-5">
-          <div class="row">
-            <div class="col-12 d-flex justify-content-center mb-5">
-              <div class="row">
-                <h3 class="text-white">Customize Your Cuff</h3>
-              </div>
-            </div>
-
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-center align-item-center mt-2">
-                  <img src="NewShirtModel/Cuff/icons/SingleButtonCUff.svg" width="50px" height="50px" alt="" />
-                </div>
-                <div class="col-8 mt-3 d-flex justify-content-start">
-                  <span id="SingleButtonCuff">Single Button Cuff </span>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-center align-item-center mt-2">
-                  <img src="NewShirtModel/Cuff/icons/DoubleButtonCuff.svg" width="50px" height="50px" alt="" />
-                </div>
-                <div class="col-8 mt-3 d-flex justify-content-start">
-                  <span id="DoubleButtonCuff">Double Button Cuff</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Placket type -->
-  <div id="Placket" class="offcanvasType">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <div class="col-12">
-      <div class="row">
-        <!-- offcanvace Body -->
-        <div class="col-12 mb-5">
-          <div class="row">
-            <div class="col-12 d-flex justify-content-center mb-5">
-              <div class="row">
-                <h3 class="text-white">Customize Your Placket</h3>
-              </div>
-            </div>
-
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-center align-item-center mt-2">
-                  <img src="NewShirtModel/Placket/icons/Button.svg" width="50px" height="50px" alt="" />
-                </div>
-                <div class="col-8 mt-3 d-flex justify-content-start">
-                  <span id="Button">Button</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-center align-item-center mt-2">
-                  <img src="NewShirtModel/Placket/icons/TuxedoPlacket.svg" width="50px" height="50px" alt="" />
-                </div>
-                <div class="col-8 mt-3 d-flex justify-content-start">
-                  <span id="Tuxedoplacket">Tuxedo placket</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-center align-item-center mt-2">
-                  <img src="NewShirtModel/Placket/icons/withoutPlacket.svg" width="50px" height="50px" alt="" />
-                </div>
-                <div class="col-8 mt-3 d-flex justify-content-start">
-                  <span id="Withoutplacket">Without placket</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 mt-3" style="cursor: pointer">
-              <div class="col-12">
-                <div class="row">
-                  <div class="col-4 mt-2 d-flex justify-content-center align-content-center">
-                    <img src="NewShirtModel/Placket/icons/WithPlacket.svg" width="50px" height="50px" alt="" />
-                  </div>
-                  <div class="col-8 mt-3 d-flex justify-content-start">
-                    <span id="Withplacket">With placket</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Pocket type -->
-  <div id="PocketNav" class="offcanvasType">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <div class="col-12">
-      <div class="row">
-        <!-- offcanvace Body -->
-        <div class="col-12 mb-5">
-          <div class="row">
-            <div class="col-12 d-flex justify-content-center mb-5">
-              <div class="row">
-                <h3 class="text-white">Customize Your Pocket</h3>
-              </div>
-            </div>
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-center align-item-center mt-2">
-                  <img src="NewShirtModel/Pocket/icons/NoPoket.svg" width="50px" height="50px" alt="" />
-                </div>
-                <div class="col-8 mt-3 d-flex justify-content-start">
-                  <span id="default">No Pcoket</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-center align-item-center mt-2">
-                  <img src="NewShirtModel/Pocket/icons/WithPocket.svg" width="50px" height="50px" alt="" />
-                </div>
-                <div class="col-8 mt-3 d-flex justify-content-start">
-                  <span id="withpocket">With Pcoket</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- BackSoulder type -->
-  <div id="BackShoulder" class="offcanvasType">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <div class="col-12">
-      <div class="row">
-        <!-- offcanvace Body -->
-        <div class="col-12 mb-5">
-          <div class="row">
-            <div class="col-12 d-flex justify-content-center mb-5">
-              <div class="row">
-                <h3 class="text-white">Customize Your Back Shoulder</h3>
-              </div>
-            </div>
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-center align-item-center mt-2">
-                  <img src="NewShirtModel/BackDetails/icons/BAckWaistDartsBack.svg" width="50px" height="50px" />
-                </div>
-                <div class="col-8 mt-3 d-flex justify-content-start">
-                  <span id="BackwaistdartsBack">Back waist darts Back</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-center align-item-center mt-2">
-                  <img src="NewShirtModel/BackDetails/icons/centerFoldsBack.svg" width="50px" height="50px" />
-                </div>
-                <div class="col-8 mt-3 d-flex justify-content-start">
-                  <span id="CenterfoldsBack">Center folds Back</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-center align-item-center mt-2">
-                  <img src="NewShirtModel/BackDetails/icons/NoBackDetails.svg" width="50px" height="50px" />
-                </div>
-                <div class="col-8 mt-3 d-flex justify-content-start">
-                  <span id="NobackdetailsBack">No Back Details </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bottom Cut type -->
-  <div id="BottomCutNav" class="offcanvasType">
-    <a href="javascript:void(0)" class="closebtn" id="BottomCutClose" onclick="closeNav()">&times;</a>
-    <div class="col-12">
-      <div class="row">
-        <!-- offcanvace Body -->
-        <div class="col-12 mb-5">
-          <div class="row">
-            <div class="col-12 d-flex justify-content-center mb-5">
-              <div class="row">
-                <h3 class="text-white">Customize Your Bottom Cut</h3>
-              </div>
-            </div>
-
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-center align-item-center mt-2">
-                  <img src="NewShirtModel/BottomCut/icons/classicBottomCut.svg" width="50px" height="50px" />
-                </div>
-                <div class="col-8 mt-3 d-flex justify-content-start">
-                  <span id="ClassicBottomCut">Classic Bottom Cut</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-center align-item-center mt-2">
-                  <img src="NewShirtModel/BottomCut/icons/ModernBottomCut.svg" width="50px" height="50px" />
-                </div>
-                <div class="col-8 mt-3 d-flex justify-content-start">
-                  <span id="ModernBottomCut">Modern Bottom Cut</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Fabric type -->
-  <div id="FabricNav" class="offcanvasType">
-    <a href="javascript:void(0)" class="closebtn" id="BottomCutClose" onclick="closeNav()">&times;</a>
-    <div class="col-12">
-      <div class="row">
-        <!-- offcanvace Body -->
-        <div class="col-12 mb-5">
-          <div class="row">
-            <div class="col-12">
-              <nav class="navbar navbar-expand-lg" style="background-color: #444">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="#">Fabric</a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarScroll">
-                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px">
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle fs-4" href="#" role="button" data-bs-toggle="dropdown"
-                          aria-expanded="false">
-                          Color Varient
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li>
-                            <a class="dropdown-item" href="#">Common Colors</a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="#">Premium Colors</a>
-                          </li>
-                          <li>
-                            <hr class="dropdown-divider" />
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="#">Customize Colors</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                      <input class="form-control me-2" type="search" placeholder="Search Colors" aria-label="Search" />
-                      <button class="btn btn-outline-secondary" type="submit">
-                        Search
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              </nav>
-            </div>
-
-            <!-- 1 color -->
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-end">
-                  <img src="components/Texture/black.webp" style="width: 80px" alt="" />
-                </div>
-                <div class="col-8 d-flex justify-content-center align-items-center">
-                  <span class="fw-bold text-white" id="Black">Black Color</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- 2 color -->
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-end">
-                  <img src="components/Texture/brown.webp" style="width: 80px" alt="" />
-                </div>
-                <div class="col-8 d-flex justify-content-center align-items-center">
-                  <span class="fw-bold text-white" id="brown">Brown</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- 3 color -->
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-end">
-                  <img src="components/Texture/cream.webp" style="width: 80px" alt="" />
-                </div>
-                <div class="col-8 d-flex justify-content-center align-items-center">
-                  <span class="fw-bold text-white" id="cream">Cream Color</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- 4 color -->
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-end">
-                  <img src="components/Texture/gray.webp" style="width: 80px" alt="" />
-                </div>
-                <div class="col-8 d-flex justify-content-center align-items-center">
-                  <span class="fw-bold text-white" id="gray">Gray Color</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- 5 color -->
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-end">
-                  <img src="components/Texture/navy blue.webp" style="width: 80px" alt="" />
-                </div>
-                <div class="col-8 d-flex justify-content-center align-items-center">
-                  <span class="fw-bold text-white" id="navy">Navy blue Color</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- 6 color -->
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-end">
-                  <img src="components/Texture/red.webp" style="width: 80px" alt="" />
-                </div>
-                <div class="col-8 d-flex justify-content-center align-items-center">
-                  <span class="fw-bold text-white" id="red">red Color</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- 3 color -->
-            <div class="col-12 mt-2" style="cursor: pointer">
-              <div class="row">
-                <div class="col-4 d-flex justify-content-end">
-                  <img src="components/Texture/yellow.webp" style="width: 80px" alt="" />
-                </div>
-                <div class="col-8 d-flex justify-content-center align-items-center">
-                  <span class="fw-bold text-white" id="yellow">yellow Color</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="col-12 bg-black" id="ViewModel"></div>
         </div>
       </div>
     </div>
