@@ -339,7 +339,7 @@
         <!-- Collar -->
         <div class="row">
           <div class="position-absolute ms-4 my-3 vh-75 col-3 p-0" style="background-color: #ffffff; display: none;"
-            id="Collar" class="offcanvasType">
+            id="Collar" class="offcanvasType" >
 
             <nav class="navbar navbar-expand-lg" style="background-color: #c7c7c7">
               <div class="container-fluid">
@@ -539,6 +539,7 @@
   <script>
     /* Open the sidebar */
     function CollaropenNav() {
+      setAllClose();
       if (document.getElementById("Collar").style.display == "block")
         document.getElementById("Collar").style.display = "none";
       else {
@@ -546,6 +547,7 @@
       }
     }
     function PlacketopenNav() {
+      setAllClose();
       if(document.getElementById("Placket").style.display == "block")
         document.getElementById("Placket").style.display = "none";
       else{
@@ -553,6 +555,7 @@
       }
     }
     function PocketopenNav() {
+      setAllClose();
       if(document.getElementById("PocketNav").style.display == "block")
         document.getElementById("PocketNav").style.display = "none";
       else{
@@ -560,6 +563,7 @@
       }
     }
     function BackShoulderopenNav() {
+      setAllClose();
       if(document.getElementById("BackShoulder").style.display == "block")
         document.getElementById("BackShoulder").style.display = "none";
       else{
@@ -567,6 +571,7 @@
       }
     }
     function BottomCutopenNav() {
+      setAllClose();
       if(document.getElementById("BottomCutNav").style.display == "block")
         document.getElementById("BottomCutNav").style.display = "none";
       else{
@@ -575,6 +580,7 @@
     }
 
     function FabricopenNav() {
+      setAllClose();
       if (document.getElementById("FabricNav").style.display == "block")
         document.getElementById("FabricNav").style.display = "none";
       else {
@@ -582,10 +588,35 @@
       }
     }
     function CuffopenNav() {
+      setAllClose();
       if(document.getElementById("Cuff").style.display == "block"){
         document.getElementById("Cuff").style.display = "none";
       }else{
         document.getElementById("Cuff").style.display = "block";
+      }
+    }
+
+    function setAllClose(){
+      if(document.getElementById("Collar").style.display == "block"){
+        document.getElementById("Collar").style.display = "none";
+      }
+      if(document.getElementById("Placket").style.display == "block"){
+        document.getElementById("Placket").style.display = "none";
+      }
+      if(document.getElementById("PocketNav").style.display == "block"){
+        document.getElementById("PocketNav").style.display = "none";
+      }
+      if(document.getElementById("BackShoulder").style.display == "block"){
+        document.getElementById("BackShoulder").style.display = "none";
+      }
+      if(document.getElementById("BottomCutNav").style.display == "block"){
+        document.getElementById("BottomCutNav").style.display = "none";
+      }
+      if(document.getElementById("FabricNav").style.display == "block"){
+        document.getElementById("FabricNav").style.display = "none";
+      }
+      if(document.getElementById("Cuff").style.display == "block"){
+        document.getElementById("Cuff").style.display = "none";
       }
     }
 
