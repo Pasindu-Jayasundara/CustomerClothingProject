@@ -14,8 +14,8 @@ var BottomCut = "null";
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 
-var TagHeght = window.innerHeight - 80;
-var TagWidth = window.innerWidth - 300;
+var TagHeght = window.innerHeight;
+var TagWidth = window.innerWidth - 155;
 var ViewModelTag = document.getElementById("ViewModel");
 console.log(ViewModelTag.inner);
 
@@ -198,13 +198,13 @@ document.getElementById("CuffEnter").addEventListener("click", () => {
   controls.target = new THREE.Vector3(0, 3, 0);
   // spotLight2.position.set(0, 15, -25);
 });
-document.getElementById("CuffOut").addEventListener("click", () => {
-  camera.position.x = 4.355445508251393;
-  camera.position.y = 2.676973612699726;
-  camera.position.z = -6.751303307894314;
-  controls.target = new THREE.Vector3(0, 6, 0);
-  // spotLight2.position.set(0, 15, -25);
-});
+// document.getElementById("CuffOut").addEventListener("click", () => {
+//   camera.position.x = 4.355445508251393;
+//   camera.position.y = 2.676973612699726;
+//   camera.position.z = -6.751303307894314;
+//   controls.target = new THREE.Vector3(0, 6, 0);
+//   // spotLight2.position.set(0, 15, -25);
+// });
 
 // Packet Type
 document.getElementById("Packet").addEventListener("click", () => {
@@ -239,9 +239,9 @@ document.getElementById("BottomCut").addEventListener("click", () => {
 // document.getElementById("BottomCut").addEventListener("mouseleave", () => {
 //   controls.target = new THREE.Vector3(0, 6, 0);
 // });
-document.getElementById("BottomCutClose").addEventListener("click", () => {
-  controls.target = new THREE.Vector3(0, 6, 0);
-});
+// document.getElementById("BottomCutClose").addEventListener("click", () => {
+//   controls.target = new THREE.Vector3(0, 6, 0);
+// });
 
 // EventList for Load New Model
 // Collar Types
@@ -251,6 +251,7 @@ document
     // loadNewMesh("varient/Business classic Collar/Business classic Collar.glb");
     CollarDesign = "Buisness Classic Collar";
     CollarChange(CollarDesign);
+    alert("jkj")
   });
 
 document
