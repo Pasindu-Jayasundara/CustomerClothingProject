@@ -1,7 +1,10 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+// compression method
 import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
+
+
 
 // Tshirt Variable
 var CollarDesign = "null";
@@ -45,65 +48,15 @@ controls.autoRotate = false;
 controls.target = new THREE.Vector3(0, 6, 0);
 controls.update();
 
-// set gradient background color
-// Create a full-screen plane for gradient background
-const backgroundGeometry = new THREE.PlaneGeometry(2, 2, 1, 1);
 
-const backgroundMaterial = new THREE.ShaderMaterial({
-  uniforms: {
-    color1: { value: new THREE.Color(0xffffff) }, // top color (light sky blue)
-    color2: { value: new THREE.Color(0x37474f) }, // bottom color (dodger blue)
-  },
-  vertexShader: `
-    varying vec2 vUv;
-    void main() {
-      vUv = uv;
-      gl_Position = vec4(position, 1.0);
-    }
-  `,
-  fragmentShader: `
-    uniform vec3 color1;
-    uniform vec3 color2;
-    varying vec2 vUv;
-    void main() {
-          // Calculate distance from the center of the plane
-      float dist = distance(vUv, vec2(0.5, 0.5));
-      // Mix the colors based on the distance (creates the gradient)
-      gl_FragColor = vec4(mix(color1, color2, dist), 1.0);
-    
-    }
-  `,
-  side: THREE.DoubleSide,
-  depthTest: false,
-  depthWrite: false,
-});
 
-const backgroundMesh = new THREE.Mesh(backgroundGeometry, backgroundMaterial);
-scene.add(backgroundMesh);
 
-const groundGeometry = new THREE.PlaneGeometry(20, 20, 32, 32);
-groundGeometry.rotateX(-Math.PI / 2);
-const groundMaterial = new THREE.MeshStandardMaterial({
-  color: 0x555555,
-  side: THREE.DoubleSide,
-});
-// const groundMesh = new THREE.Mesh(groundGeometry, groundMaterial);
-// groundMesh.castShadow = false;
-// groundMesh.receiveShadow = true;
-// scene.add(groundMesh);
 
-// Lights
-// const spotLight = new THREE.SpotLight(0xffffff, 2000, 100, 0.22, 1); // (Color,LightPower,?,)
-// spotLight.position.set(0, 25, 0); // (X,Y,?)
-// spotLight.castShadow = true;
-// spotLight.shadow.bias = -0.0001;
-// scene.add(spotLight);
-
-// const spotLight2 = new THREE.SpotLight(0xffffff, 2000, 100, 0.22, 1); // (Color,LightPower,?,)
-// spotLight2.position.set(0, 35, 25); // (X,Y,?)
-// spotLight2.castShadow = true;
-// spotLight2.shadow.bias = -0.0001;
-// scene.add(spotLight2);
+// Background texture load
+const backgroudnTexture = new THREE.TextureLoader().load(
+  "https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/PDaTSuJ/videoblocks-particles-white-business-bright-glitter-bokeh-dust-abstract-background-loop_r2ey4hsdb_thumbnail-360_09.jpg"
+);
+scene.background = backgroudnTexture;
 
 const light = new THREE.HemisphereLight(0xffffff, 0x080820, 4);
 scene.add(light);
@@ -251,7 +204,7 @@ document
     // loadNewMesh("varient/Business classic Collar/Business classic Collar.glb");
     CollarDesign = "Buisness Classic Collar";
     CollarChange(CollarDesign);
-    alert("jkj")
+    alert("jkj");
   });
 
 document
