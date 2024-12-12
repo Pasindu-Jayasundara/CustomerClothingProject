@@ -189,7 +189,7 @@
     <div class="row d-flex position-relative">
 
       <div class="d-flex bg-white justify-content-center align-items-center position-absolute top-0 col-1"
-        style="opacity: 0.75; cursor: pointer;" onclick="scrollList(1)">
+        style="opacity: 0.75; cursor: pointer;" onclick="scrollList(1)" id="upArrow">
         <i class="bi bi-caret-up-fill fs-2"></i>
       </div>
 
@@ -199,8 +199,8 @@
 
         <!-- Fabric -->
         <div class="row bg-white d-flex justify-content-center align-items-center p-2 my-3" data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasLeftCollar" aria-controls="offcanvasLeftCollar" onclick="FabricopenNav();" id="Fabric"
-          style="width: 80%; cursor: pointer;">
+          data-bs-target="#offcanvasLeftCollar" aria-controls="offcanvasLeftCollar" onclick="FabricopenNav();"
+          id="Fabric" style="width: 80%; cursor: pointer;">
           <div class="btn-1 img-1"></div>
         </div>
 
@@ -249,7 +249,7 @@
       </div>
 
       <div class="d-flex bg-white justify-content-center align-items-center position-absolute bottom-0 col-1"
-        style="opacity: 0.75; cursor: pointer;" onclick="scrollList(2)">
+        style="opacity: 0.75; cursor: pointer;" onclick="scrollList(2)" id="downArrow">
         <i class="bi bi-caret-down-fill fs-2"></i>
       </div>
 
@@ -606,8 +606,8 @@
             <div class="row d-flex justify-content-around align-items-center mt-5 pt-5">
               <div class="col-4 btn btn-secondary" style="visibility: hidden;" data-bs-target="#carouselExampleCaptions"
                 data-bs-slide="prev"><i class="bi bi-caret-left-fill"></i> Previous</div>
-              <div class="col-4 btn btn-success" data-bs-target="#carouselExampleCaptions" data-bs-slide="next" onclick="progressbar(2)">Next <i
-                  class="bi bi-caret-right-fill"></i></div>
+              <div class="col-4 btn btn-success" data-bs-target="#carouselExampleCaptions" data-bs-slide="next"
+                onclick="progressbar(2)">Next <i class="bi bi-caret-right-fill"></i></div>
             </div>
           </div>
 
@@ -654,8 +654,10 @@
               </div>
 
               <div class="row d-flex justify-content-around align-items-center m-0 flex-row col-12">
-                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" onclick="progressbar(1)">
-                  <i class="bi bi-caret-left-fill"></i> Previous</div>
+                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev"
+                  onclick="progressbar(1)">
+                  <i class="bi bi-caret-left-fill"></i> Previous
+                </div>
                 <div class="col-4 d-block btn btn-success" data-bs-target="#carouselExampleCaptions"
                   data-bs-slide="next" onclick="progressbar(3)">Next <i class="bi bi-caret-right-fill"></i></div>
               </div>
@@ -705,8 +707,10 @@
               </div>
 
               <div class="row d-flex justify-content-around align-items-center m-0 flex-row col-12">
-                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" onclick="progressbar(2)">
-                  <i class="bi bi-caret-left-fill"></i> Previous</div>
+                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev"
+                  onclick="progressbar(2)">
+                  <i class="bi bi-caret-left-fill"></i> Previous
+                </div>
                 <div class="col-4 d-block btn btn-success" data-bs-target="#carouselExampleCaptions"
                   data-bs-slide="next" onclick="progressbar(4)">Next <i class="bi bi-caret-right-fill"></i></div>
               </div>
@@ -756,8 +760,10 @@
               </div>
 
               <div class="row d-flex justify-content-around align-items-center m-0 flex-row col-12">
-                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" onclick="progressbar(3)">
-                  <i class="bi bi-caret-left-fill"></i> Previous</div>
+                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev"
+                  onclick="progressbar(3)">
+                  <i class="bi bi-caret-left-fill"></i> Previous
+                </div>
                 <div class="col-4 d-block btn btn-success" data-bs-target="#carouselExampleCaptions"
                   data-bs-slide="next" onclick="progressbar(5)">Next <i class="bi bi-caret-right-fill"></i></div>
               </div>
@@ -823,9 +829,12 @@
               </button>
 
               <div class="row d-flex justify-content-around align-items-center mt-5 flex-row col-12">
-                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" onclick="progressbar(4)">
-                  <i class="bi bi-caret-left-fill"></i> Previous</div>
-                <div class="col-4 d-block btn btn-success" onclick="window.location.href='chekcout.html'"> Checkout <i class="bi bi-wallet"></i></div>
+                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev"
+                  onclick="progressbar(4)">
+                  <i class="bi bi-caret-left-fill"></i> Previous
+                </div>
+                <div class="col-4 d-block btn btn-success" onclick="window.location.href='chekcout.html'"> Checkout <i
+                    class="bi bi-wallet"></i></div>
               </div>
             </div>
 
@@ -849,22 +858,74 @@
 
   <script>
 
-    var idArr = ["Fabric","CollarEnter","CuffEnter","Packet","Pocket","backShoulder","BottomCut"];
+    var idArr = ["Fabric", "CollarEnter", "CuffEnter", "Packet", "Pocket", "backShoulder", "BottomCut"];
+    var idArr = ["Fabric", "CollarEnter", "CuffEnter", "Packet", "Pocket", "backShoulder", "BottomCut"];
     var nowIndex = 0;
+    idArr.forEach(id => {
+      let element = document.getElementById(id);
+      let rect = element.getBoundingClientRect();
+      if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+        nowIndex++;
+      }
+    });
 
-    function scrollList(id) {
-      document.getElementById(idArr[nowIndex]).scrollIntoView();
+    function arrowShow() {
 
-      console.log(nowIndex);
-      if (id == 1) {// up arrow
-        nowIndex>0?nowIndex--:null;
-      } else if (id == 2) { // down arrow
-        nowIndex<6? nowIndex++:null;
+      let firstElement = document.getElementById(idArr[0]);
+      let firstRect = firstElement.getBoundingClientRect();
+      if (firstRect.top >= 0 && firstRect.bottom <= window.innerHeight) {
+        document.getElementById("upArrow").classList.replace("d-flex", "d-none");
+      } else {
+        document.getElementById("upArrow").classList.replace("d-none", "d-flex");
+      }
+
+      let lastElement = document.getElementById(idArr[idArr.length - 1]);
+      let lastRect = lastElement.getBoundingClientRect();
+      if (lastRect.top >= 0 && lastRect.bottom <= window.innerHeight) {
+        document.getElementById("downArrow").classList.replace("d-flex", "d-none");
+      } else {
+        document.getElementById("downArrow").classList.replace("d-none", "d-flex");
       }
     }
+    arrowShow();
 
-    function progressbar(precent){
-      document.getElementById("progressbar").style.width = precent*20 + "%";
+    let reverseIdArr = [...idArr].reverse();
+    var isFirstTime = true
+    function scrollList(id) {
+
+      if (id == 1) {// up arrow
+
+        nowIndex--
+        document.getElementById(idArr[nowIndex]).scrollIntoView();
+
+
+      } else if (id == 2) { // down arrow
+
+        if (isFirstTime) {
+          //visible last id
+          reverseIdArr.forEach(idD => {
+            let element = document.getElementById(idD);
+            let rect = element.getBoundingClientRect();
+            if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+              nowIndex = idArr.indexOf(idD);
+              document.getElementById(idArr[nowIndex]).scrollIntoView();
+              return;
+            }
+          });
+
+          isFirstTime = false;
+        } else {
+          nowIndex++
+          document.getElementById(idArr[nowIndex]).scrollIntoView();
+        }
+
+      }
+
+      arrowShow();
+    }
+
+    function progressbar(precent) {
+      document.getElementById("progressbar").style.width = precent * 20 + "%";
     }
 
     /* Open the sidebar */
