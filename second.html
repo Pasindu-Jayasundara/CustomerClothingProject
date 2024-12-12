@@ -165,6 +165,10 @@
     .img-7 {
       background-image: url('NewShirtModel/BottomCut/icons/classicBottomCut.svg');
     }
+
+    .img-8 {
+      background-image: url('NewShirtModel/letter/a\ \(1\).png');
+    }
   </style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
@@ -244,6 +248,13 @@
           style="width: 80%; cursor: pointer;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeftBottomCut"
           aria-controls="offcanvasLeftBottomCut" id="BottomCut" onclick="BottomCutopenNav()">
           <div class="btn-1 img-7"></div>
+        </div>
+
+        <!-- Letter -->
+        <div class="row bg-white d-flex justify-content-center align-items-center p-2 mb-3"
+          style="width: 80%; cursor: pointer;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLetter"
+          aria-controls="offcanvasLetter" id="letter" onclick="LetteropenNav()">
+          <div class="btn-1 img-8"></div>
         </div>
 
       </div>
@@ -515,6 +526,31 @@
               <div class="col-12 my-3 ms-3" style="cursor: pointer">
                 <img src="NewShirtModel/BottomCut/icons/ModernBottomCut.svg" style="width: 40px" alt="" />
                 <span class="fw-bold text-black" id="ModernBottomCut">Modern Bottom Cut</span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- letter -->
+        <div class="row">
+          <div class="position-absolute ms-4 my-3 vh-75 col-3 p-0" style="background-color: #ffffff; display: none;"
+            id="letterNav" class="offcanvasType">
+
+            <nav class="navbar navbar-expand-lg" style="background-color: #c7c7c7">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Customize Text</a>
+              </div>
+            </nav>
+
+            <div class="row">
+
+              <div class="d-flex flex-row px-4 py-3 gap-2">
+                <input type="text" class="form-control" placeholder="Sample Text" aria-label="Sample Text"
+                  id="sampleText">
+                <button class="btn btn-outline-success" type="button">Add</button>
+                <button class="btn btn-outline-danger" type="button" onclick="removeSampleText()">Remove</button>
               </div>
 
             </div>
@@ -858,7 +894,11 @@
 
   <script>
 
-    var idArr = ["Fabric", "CollarEnter", "CuffEnter", "Packet", "Pocket", "backShoulder", "BottomCut"];
+    function removeSampleText() {
+      document.getElementById('sampleText').value = ''
+    }
+
+    var idArr = ["Fabric", "CollarEnter", "CuffEnter", "Packet", "Pocket", "backShoulder", "BottomCut", "letter"];
     var nowIndex = 0;
     idArr.forEach(id => {
       let element = document.getElementById(id);
@@ -969,6 +1009,15 @@
       }
     }
 
+    function LetteropenNav() {
+      if (document.getElementById("letterNav").style.display == "block")
+        document.getElementById("letterNav").style.display = "none";
+      else {
+        setAllClose();
+        document.getElementById("letterNav").style.display = "block";
+      }
+    }
+
     function FabricopenNav() {
       if (document.getElementById("FabricNav").style.display == "block")
         document.getElementById("FabricNav").style.display = "none";
@@ -1007,6 +1056,9 @@
       }
       if (document.getElementById("Cuff").style.display == "block") {
         document.getElementById("Cuff").style.display = "none";
+      }
+      if (document.getElementById("letterNav").style.display == "block") {
+        document.getElementById("letterNav").style.display = "none";
       }
     }
 
