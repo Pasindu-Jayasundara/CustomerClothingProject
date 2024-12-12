@@ -165,6 +165,10 @@
     .img-7 {
       background-image: url('NewShirtModel/BottomCut/icons/classicBottomCut.svg');
     }
+
+    .img-8 {
+      background-image: url('NewShirtModel/letter/a\ \(1\).png');
+    }
   </style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
@@ -189,7 +193,7 @@
     <div class="row d-flex position-relative">
 
       <div class="d-flex bg-white justify-content-center align-items-center position-absolute top-0 col-1"
-        style="opacity: 0.75;">
+        style="opacity: 0.75; cursor: pointer;" onclick="scrollList(1)" id="upArrow">
         <i class="bi bi-caret-up-fill fs-2"></i>
       </div>
 
@@ -200,7 +204,7 @@
         <!-- Fabric -->
         <div class="row bg-white d-flex justify-content-center align-items-center p-2 my-3" data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasLeftCollar" aria-controls="offcanvasLeftCollar" onclick="FabricopenNav();"
-          style="width: 80%; cursor: pointer;">
+          id="Fabric" style="width: 80%; cursor: pointer;">
           <div class="btn-1 img-1"></div>
         </div>
 
@@ -246,10 +250,17 @@
           <div class="btn-1 img-7"></div>
         </div>
 
+        <!-- Letter -->
+        <div class="row bg-white d-flex justify-content-center align-items-center p-2 mb-3"
+          style="width: 80%; cursor: pointer;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLetter"
+          aria-controls="offcanvasLetter" id="letter" onclick="LetteropenNav()">
+          <div class="btn-1 img-8"></div>
+        </div>
+
       </div>
 
       <div class="d-flex bg-white justify-content-center align-items-center position-absolute bottom-0 col-1"
-        style="opacity: 0.75;">
+        style="opacity: 0.75; cursor: pointer;" onclick="scrollList(2)" id="downArrow">
         <i class="bi bi-caret-down-fill fs-2"></i>
       </div>
 
@@ -522,6 +533,31 @@
           </div>
         </div>
 
+        <!-- letter -->
+        <div class="row">
+          <div class="position-absolute ms-4 my-3 vh-75 col-3 p-0" style="background-color: #ffffff; display: none;"
+            id="letterNav" class="offcanvasType">
+
+            <nav class="navbar navbar-expand-lg" style="background-color: #c7c7c7">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Customize Text</a>
+              </div>
+            </nav>
+
+            <div class="row">
+
+              <div class="d-flex flex-row px-4 py-3 gap-2">
+                <input type="text" class="form-control" placeholder="Sample Text" aria-label="Sample Text"
+                  id="sampleText">
+                <button class="btn btn-outline-success" type="button">Add</button>
+                <button class="btn btn-outline-danger" type="button" onclick="removeSampleText()">Remove</button>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
         <button class="btn btn-primary mybutton position-absolute bottom-25 right-0" data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
           Purchace
@@ -606,8 +642,8 @@
             <div class="row d-flex justify-content-around align-items-center mt-5 pt-5">
               <div class="col-4 btn btn-secondary" style="visibility: hidden;" data-bs-target="#carouselExampleCaptions"
                 data-bs-slide="prev"><i class="bi bi-caret-left-fill"></i> Previous</div>
-              <div class="col-4 btn btn-success" data-bs-target="#carouselExampleCaptions" data-bs-slide="next" onclick="progressbar(2)">Next <i
-                  class="bi bi-caret-right-fill"></i></div>
+              <div class="col-4 btn btn-success" data-bs-target="#carouselExampleCaptions" data-bs-slide="next"
+                onclick="progressbar(2)">Next <i class="bi bi-caret-right-fill"></i></div>
             </div>
           </div>
 
@@ -654,8 +690,10 @@
               </div>
 
               <div class="row d-flex justify-content-around align-items-center m-0 flex-row col-12">
-                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" onclick="progressbar(1)">
-                  <i class="bi bi-caret-left-fill"></i> Previous</div>
+                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev"
+                  onclick="progressbar(1)">
+                  <i class="bi bi-caret-left-fill"></i> Previous
+                </div>
                 <div class="col-4 d-block btn btn-success" data-bs-target="#carouselExampleCaptions"
                   data-bs-slide="next" onclick="progressbar(3)">Next <i class="bi bi-caret-right-fill"></i></div>
               </div>
@@ -705,8 +743,10 @@
               </div>
 
               <div class="row d-flex justify-content-around align-items-center m-0 flex-row col-12">
-                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" onclick="progressbar(2)">
-                  <i class="bi bi-caret-left-fill"></i> Previous</div>
+                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev"
+                  onclick="progressbar(2)">
+                  <i class="bi bi-caret-left-fill"></i> Previous
+                </div>
                 <div class="col-4 d-block btn btn-success" data-bs-target="#carouselExampleCaptions"
                   data-bs-slide="next" onclick="progressbar(4)">Next <i class="bi bi-caret-right-fill"></i></div>
               </div>
@@ -756,8 +796,10 @@
               </div>
 
               <div class="row d-flex justify-content-around align-items-center m-0 flex-row col-12">
-                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" onclick="progressbar(3)">
-                  <i class="bi bi-caret-left-fill"></i> Previous</div>
+                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev"
+                  onclick="progressbar(3)">
+                  <i class="bi bi-caret-left-fill"></i> Previous
+                </div>
                 <div class="col-4 d-block btn btn-success" data-bs-target="#carouselExampleCaptions"
                   data-bs-slide="next" onclick="progressbar(5)">Next <i class="bi bi-caret-right-fill"></i></div>
               </div>
@@ -823,9 +865,12 @@
               </button>
 
               <div class="row d-flex justify-content-around align-items-center mt-5 flex-row col-12">
-                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" onclick="progressbar(4)">
-                  <i class="bi bi-caret-left-fill"></i> Previous</div>
-                <div class="col-4 d-block btn btn-success" onclick="window.location.href='chekcout.html'"> Checkout <i class="bi bi-wallet"></i></div>
+                <div class="col-4 d-block btn btn-dark" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev"
+                  onclick="progressbar(4)">
+                  <i class="bi bi-caret-left-fill"></i> Previous
+                </div>
+                <div class="col-4 d-block btn btn-success" onclick="window.location.href='chekcout.html'"> Checkout <i
+                    class="bi bi-wallet"></i></div>
               </div>
             </div>
 
@@ -849,8 +894,77 @@
 
   <script>
 
-    function progressbar(precent){
-      document.getElementById("progressbar").style.width = precent*20 + "%";
+    function removeSampleText() {
+      document.getElementById('sampleText').value = ''
+    }
+
+    var idArr = ["Fabric", "CollarEnter", "CuffEnter", "Packet", "Pocket", "backShoulder", "BottomCut", "letter"];
+    var nowIndex = 0;
+    idArr.forEach(id => {
+      let element = document.getElementById(id);
+      let rect = element.getBoundingClientRect();
+      if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+        nowIndex++;
+      }
+    });
+
+    function arrowShow() {
+
+      let firstElement = document.getElementById(idArr[0]);
+      let firstRect = firstElement.getBoundingClientRect();
+      if (firstRect.top >= 0 && firstRect.bottom <= window.innerHeight) {
+        document.getElementById("upArrow").classList.replace("d-flex", "d-none");
+      } else {
+        document.getElementById("upArrow").classList.replace("d-none", "d-flex");
+      }
+
+      let lastElement = document.getElementById(idArr[idArr.length - 1]);
+      let lastRect = lastElement.getBoundingClientRect();
+      if (lastRect.top >= 0 && lastRect.bottom <= window.innerHeight) {
+        document.getElementById("downArrow").classList.replace("d-flex", "d-none");
+      } else {
+        document.getElementById("downArrow").classList.replace("d-none", "d-flex");
+      }
+    }
+    arrowShow();
+
+    let reverseIdArr = [...idArr].reverse();
+    var isFirstTime = true
+    function scrollList(id) {
+
+      if (id == 1) {// up arrow
+
+        nowIndex--
+        document.getElementById(idArr[nowIndex]).scrollIntoView();
+
+
+      } else if (id == 2) { // down arrow
+
+        if (isFirstTime) {
+          //visible last id
+          reverseIdArr.forEach(idD => {
+            let element = document.getElementById(idD);
+            let rect = element.getBoundingClientRect();
+            if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+              nowIndex = idArr.indexOf(idD);
+              document.getElementById(idArr[nowIndex]).scrollIntoView();
+              return;
+            }
+          });
+
+          isFirstTime = false;
+        } else {
+          nowIndex++
+          document.getElementById(idArr[nowIndex]).scrollIntoView();
+        }
+
+      }
+
+      arrowShow();
+    }
+
+    function progressbar(precent) {
+      document.getElementById("progressbar").style.width = precent * 20 + "%";
     }
 
     /* Open the sidebar */
@@ -895,6 +1009,15 @@
       }
     }
 
+    function LetteropenNav() {
+      if (document.getElementById("letterNav").style.display == "block")
+        document.getElementById("letterNav").style.display = "none";
+      else {
+        setAllClose();
+        document.getElementById("letterNav").style.display = "block";
+      }
+    }
+
     function FabricopenNav() {
       if (document.getElementById("FabricNav").style.display == "block")
         document.getElementById("FabricNav").style.display = "none";
@@ -933,6 +1056,9 @@
       }
       if (document.getElementById("Cuff").style.display == "block") {
         document.getElementById("Cuff").style.display = "none";
+      }
+      if (document.getElementById("letterNav").style.display == "block") {
+        document.getElementById("letterNav").style.display = "none";
       }
     }
 
