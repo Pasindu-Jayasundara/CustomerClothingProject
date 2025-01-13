@@ -547,10 +547,19 @@
             <div class="row">
 
               <div class="d-flex flex-row px-4 py-3 gap-2">
-                <input type="text" class="form-control" placeholder="Sample Text" aria-label="Sample Text"
-                  id="sampleText">
-                <button class="btn btn-outline-success" type="button">Add</button>
-                <button class="btn btn-outline-danger" type="button" onclick="removeSampleText()">Remove</button>
+                <input type="text" class="form-control" id="CustomTextInput" placeholder="Sample Text" maxlength="7" aria-label="Sample Text"
+                  >
+                <button class="btn btn-outline-success" id="TextAdding" type="button">Add</button>
+                <button class="btn btn-outline-danger" id="TextRemove" type="button">Remove</button>
+              </div>
+              <br>
+             
+              <div class="d-flex flex-row px-4 py-3 gap-2">
+
+                <hr>
+                <span style="color: black;">Change Text color</span>
+                <input type="color" class="form-control" id="textColor" >
+               
               </div>
 
             </div>
@@ -894,9 +903,7 @@
 
   <script>
 
-    function removeSampleText() {
-      document.getElementById('sampleText').value = ''
-    }
+   
 
     var idArr = ["Fabric", "CollarEnter", "CuffEnter", "Packet", "Pocket", "backShoulder", "BottomCut", "letter"];
     var nowIndex = 0;
