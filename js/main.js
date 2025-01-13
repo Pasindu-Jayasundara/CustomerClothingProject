@@ -3,8 +3,9 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 // compression method
 import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
-
-
+// fonts
+import { FontLoader } from "https://cdn.jsdelivr.net/npm/three@latest/examples/jsm/loaders/FontLoader.js";
+import { TextGeometry } from "https://cdn.jsdelivr.net/npm/three@latest/examples/jsm/geometries/TextGeometry.js";
 
 // Tshirt Variable
 var CollarDesign = "null";
@@ -20,7 +21,6 @@ renderer.outputColorSpace = THREE.SRGBColorSpace;
 var TagHeght = window.innerHeight;
 var TagWidth = window.innerWidth - 155;
 var ViewModelTag = document.getElementById("ViewModel");
-console.log(ViewModelTag.inner);
 
 renderer.setSize(TagWidth, TagHeght);
 renderer.setClearColor(0xc0c0c0);
@@ -47,10 +47,6 @@ controls.maxPolarAngle = 1.5;
 controls.autoRotate = false;
 controls.target = new THREE.Vector3(0, 6, 0);
 controls.update();
-
-
-
-
 
 // Background texture load
 const backgroudnTexture = new THREE.TextureLoader().load(
@@ -888,4 +884,53 @@ document.getElementById("yellow").addEventListener("click", () => {
       }
     });
   }
+});
+
+document.getElementById("TextAdding").addEventListener("click", () => {
+  var TextValue = document.getElementById("CustomTextInput").value;
+  var textColor = document.getElementById("textColor").value;
+
+  CustomFontsLoading(TextValue, textColor);
+});
+
+var textMesh;
+
+function CustomFontsLoading(text, color) {
+  const LoadFonts = new FontLoader();
+
+  if (textMesh != null) {
+    scene.remove(textMesh);
+  } 
+
+  LoadFonts.load(
+    "https://threejs.org/examples/fonts/helvetiker_regular.typeface.json",
+    function (font) {
+      const geometry = new TextGeometry(text, {
+        font: font,
+        size: 0.06,
+        // size: 1,
+        depth: 0.01,
+        curveSegments: 100,
+        bevelEnabled: true,
+        bevelThickness: 1,
+        bevelSize: 0,
+        bevelOffset: 0,
+        bevelSegments: 0,
+      });
+      const textMaterial = new THREE.MeshBasicMaterial({ color: color });
+      textMesh = new THREE.Mesh(geometry, textMaterial);
+
+      // Position text
+      textMesh.position.set(0.53, 6.698, 0.1);
+      textMesh.rotateY(0.15);
+      textMesh.rotateX(-0.4);
+
+      scene.add(textMesh);
+    }
+  );
+}
+
+document.getElementById("TextRemove").addEventListener("click",()=>{
+  document.getElementById('CustomTextInput').value = ''
+  scene.remove(textMesh);
 });
