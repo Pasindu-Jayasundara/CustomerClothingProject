@@ -169,6 +169,9 @@
     .img-8 {
       background-image: url('NewShirtModel/letter/a\ \(1\).png');
     }
+    .img-9 {
+      background-image: url('NewShirtModel/ButtonColor/14141112.png');
+    }
   </style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
@@ -256,6 +259,13 @@
           aria-controls="offcanvasLetter" id="letter" onclick="LetteropenNav()">
           <div class="btn-1 img-8"></div>
         </div>
+
+         <!-- Button Color -->
+         <div class="row bg-white d-flex justify-content-center align-items-center p-2 mb-3"
+         style="width: 80%; cursor: pointer;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLetter"
+         aria-controls="offcanvasLetter" id="letter" onclick="ButtonColoropenNav()">
+         <div class="btn-1 img-9"></div>
+       </div>
 
       </div>
 
@@ -560,6 +570,29 @@
                 <span style="color: black;">Change Text color</span>
                 <input type="color" class="form-control" id="textColor" >
                
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Button Color -->
+        <div class="row">
+          <div class="position-absolute ms-4 my-3 vh-75 col-3 p-0" style="background-color: #ffffff; display: none;"
+            id="ButtonNav" class="offcanvasType">
+
+            <nav class="navbar navbar-expand-lg" style="background-color: #c7c7c7">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Customize Text button</a>
+              </div>
+            </nav>
+
+            <div class="row">
+              <div class="d-flex flex-row px-4 py-3 gap-2">
+                <hr>
+                <span style="color: black;">Change Button color</span>
+                <input type="color" class="form-control" id="buttonColor" >
               </div>
 
             </div>
@@ -1025,6 +1058,15 @@
       }
     }
 
+    function ButtonColoropenNav() {
+      if (document.getElementById("ButtonNav").style.display == "block")
+        document.getElementById("ButtonNav").style.display = "none";
+      else {
+        setAllClose();
+        document.getElementById("ButtonNav").style.display = "block";
+      }
+    }
+
     function FabricopenNav() {
       if (document.getElementById("FabricNav").style.display == "block")
         document.getElementById("FabricNav").style.display = "none";
@@ -1066,6 +1108,9 @@
       }
       if (document.getElementById("letterNav").style.display == "block") {
         document.getElementById("letterNav").style.display = "none";
+      }
+      if(document.getElementById("ButtonNav").style.display == "block"){
+        document.getElementById("ButtonNav").style.display = "none";
       }
     }
 

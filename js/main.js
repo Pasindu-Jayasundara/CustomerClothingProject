@@ -14,6 +14,7 @@ var placketDesing = "null";
 var PocketDesing = "null";
 var backShoulder = "null";
 var BottomCut = "null";
+var BUttonColor = "black";
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -393,6 +394,11 @@ function ChangePlacket(placketDesign) {
     loader.load("Placket/Button.glb", (gltf) => {
       PlacetMesh = gltf.scene; // Store the new mesh
       PlacetMesh.position.set(0, 1.05, -1);
+      PlacetMesh.traverse((child) => {
+        if (child.isMesh) {
+            child.material.color.set(BUttonColor); // Set color to red
+        }
+      });
       scene.add(PlacetMesh); // Add the new mesh to the scene
     });
   } else if (placketDesign == "Tuxedo placket") {
@@ -886,6 +892,7 @@ document.getElementById("yellow").addEventListener("click", () => {
   }
 });
 
+// text adding
 document.getElementById("TextAdding").addEventListener("click", () => {
   var TextValue = document.getElementById("CustomTextInput").value;
   var textColor = document.getElementById("textColor").value;
@@ -900,7 +907,7 @@ function CustomFontsLoading(text, color) {
 
   if (textMesh != null) {
     scene.remove(textMesh);
-  } 
+  }
 
   LoadFonts.load(
     "https://threejs.org/examples/fonts/helvetiker_regular.typeface.json",
@@ -930,7 +937,16 @@ function CustomFontsLoading(text, color) {
   );
 }
 
-document.getElementById("TextRemove").addEventListener("click",()=>{
-  document.getElementById('CustomTextInput').value = ''
+document.getElementById("TextRemove").addEventListener("click", () => {
+  document.getElementById("CustomTextInput").value = "";
   scene.remove(textMesh);
+});
+
+document.getElementById("buttonColor").addEventListener("change", () => {
+  BUttonColor = document.getElementById("buttonColor").value;
+  PlacetMesh.traverse((child) => {
+    if (child.isMesh) {
+        child.material.color.set(BUttonColor); // Set color to red
+    }
+  });
 });
